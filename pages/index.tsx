@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2 bg-violet-700">
       <Head>
-        <title>Create Next App</title>
+        <title>The Devs Space</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
