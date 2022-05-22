@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Layout from '../../components/layout';
 import { useAuth } from '../../context/AuthContext';
@@ -28,6 +29,11 @@ const LoggedIn = () => {
             <>
               <div>
                 {<div>Congratulations {user?.displayName}! You are logged in.</div> }
+                <Link href={"/user/offer/list"}>
+                  <a>
+                    Vagas
+                  </a>
+                </Link>
               </div>
             </>
         }

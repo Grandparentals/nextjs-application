@@ -110,7 +110,6 @@ function Navbar({page}: {page: string}) {
             setLoading(false)
             if (user) {
                 setIsLogged(true)
-                
             } 
         });
     }, []);

@@ -14,13 +14,17 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@headlessui/react": "^1.6.2",
     "@heroicons/react": "^1.0.6",
+    "axios": "^0.27.2",
+    "dashify": "^2.0.0",
     "firebase": "^9",
+    "firebase-admin": "^10.2.0",
     "headlessui": "^0.0.0",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/dashify": "^1.0.1",
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
     "autoprefixer": "^10.4.0",

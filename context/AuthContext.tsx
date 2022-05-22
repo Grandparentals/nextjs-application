@@ -64,7 +64,8 @@ export function AuthProvider({ children }: Props) {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 session.set('user', user)
-                router.push('/user')
+                if (router.pathname === '/')
+                    router.push('/user');
             } else {
                 session.delete('user')
                 router.push('/')
