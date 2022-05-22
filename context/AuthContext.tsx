@@ -4,6 +4,7 @@ import { auth } from "../lib/firebase";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import router from "next/router";
+import { session } from "../lib/session";
 
 const authContextDefaultValues: authContextType = {
     user: null,
@@ -34,7 +35,7 @@ export function AuthProvider({ children }: Props) {
                 const token = credential?.accessToken;
                 // The signed-in user info.
                 const user = result.user;
-                console.log({ credential, token, user });
+                setUser(true);
             })
             .catch((error) => {
                 // Handle Errors here.
@@ -44,13 +45,12 @@ export function AuthProvider({ children }: Props) {
                 const email = error.email;
                 // The AuthCredential type that was used.
                 const credential = GoogleAuthProvider.credentialFromError(error);
-                console.log({ errorCode, errorMessage, email, credential });
+                setUser(false);
             });
     };
 
     const logout = () => {
         auth.signOut();
-        console.log("logout");
     };
 
     const value = {
@@ -63,10 +63,10 @@ export function AuthProvider({ children }: Props) {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                const uid = user.uid;
-                console.log({ uid });
-                router.push('/logged_in')
+                session.set('user', user)
+                router.push('/user')
             } else {
+                session.delete('user')
                 router.push('/')
             }
         });

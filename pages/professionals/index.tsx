@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 
 const Home: NextPage = () => {
   
   return (
-    <Layout page='home'>    
+    <Layout page='professionals'>    
       <Head>
         <title>The Devs Space</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <h1 className="text-6xl font-semibold text-white">
         Welcome to{' '}
         <a className="text-violet-100 font-extralight" href="https://nextjs.org">
-          remoteu.org
+          Professionals
         </a>
       </h1>
     </Layout> 
