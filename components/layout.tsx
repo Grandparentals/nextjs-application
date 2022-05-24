@@ -5,7 +5,7 @@ export default function Layout({ children, page }: { children: React.ReactNode, 
   const siteTitle = "Remoteu.org"
 
   return (
-   <div className="bg-violet-600">
+   <div className="bg-gray-50">
     <Head>
       <meta
         name="description"

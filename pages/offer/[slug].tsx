@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Layout from '../../components/layout';
-import db from '../../utils/db';
+import db from '../../lib/db';
 
 const Post = (props: any) => {
     const { entry } = props;

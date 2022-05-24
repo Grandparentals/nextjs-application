@@ -134,7 +134,7 @@ function Navbar({page}: {page: string}) {
                     </div>
                     <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
                         <Popover.Group as="nav" className="flex space-x-10 align-middle items-center">
-                            <Link href={'/professionals'}>
+                            <Link href={'/professional/list'}>
                                 <a className={
                                     `
                                     text-base
@@ -146,7 +146,7 @@ function Navbar({page}: {page: string}) {
                                     Devs
                                 </a>
                             </Link>
-                            <Link href={'/offers'}>
+                            <Link href={'/offer/list'}>
                                 <a className={
                                     `
                                     text-base

@@ -1,8 +1,9 @@
 type authContextType = {
-    user: boolean | null;
-    login: () => void;
-    logout: () => void;
-};
+    useSession: object
+    user: boolean | null
+    login: () => void
+    logout: () => void
+}
 
 type user = {
     apiKey: string
@@ -21,3 +22,4 @@ type user = {
     }
     uid: string
 }
+

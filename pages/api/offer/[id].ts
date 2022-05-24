@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import db from '../../../utils/db';
+import db from '../../../lib/db';
 
 export default async (
     req: NextApiRequest,
