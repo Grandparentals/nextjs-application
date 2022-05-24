@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import db from '../../lib/db';
-import { storage } from '../../lib/firebase'
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
 type Data = {
