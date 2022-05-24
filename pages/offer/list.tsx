@@ -40,20 +40,20 @@ const Offers: NextPage = (props: any) => {
               </div>
               <div className="mt-6 flex items-center">
                 <div className="flex-shrink-0">
-                  <Link href={`/person/${post.author.uid}}`}>
+                  {/* <Link href={`/person/${post.author.uid}}`}>
                     <a>
                       <span className="sr-only">{post.author.name}</span>
                       <img className="h-10 w-10 rounded-full" src={post.author.imageUrl} alt="Avatar Autor" />
                     </a>
-                  </Link>
+                  </Link> */}
                 </div>
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-900">
-                    <Link href={`/person/${post.author.uid}`}>
+                    {/* <Link href={`/person/${post.author.uid}`}>
                       <a className="hover:underline">
                        {post.author.name}
                       </a>
-                    </Link>
+                    </Link> */}
                   </p>
                   <div className="flex space-x-1 text-sm text-gray-500">
                     <time dateTime={post.created}>{post.created}</time>
