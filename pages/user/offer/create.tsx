@@ -8,16 +8,22 @@ import UploadFile from '../../../components/storage/UploadFile';
 const Offer = () => {
     const { useSession } = useAuth() as { useSession: user };
 
-    
+    const [imgUrl, setImgUrl] = useState('');
+
+    const setImageFromChild = (imgString: string) => {
+        setImgUrl(imgString)
+    }
 
     const [content, setContent] = useState({
         title: undefined,
-        body: undefined,
+        body: undefined
     })
+
     const onChange = (e: any) => {
         const { value, name } = e.target;
         setContent(prevState => ({ ...prevState, [name]: value }));
     }
+    
     const onSubmit = async () => {
         const author = {
             name: useSession.displayName,
@@ -32,14 +38,14 @@ const Offer = () => {
         }
 
         const { title, body }= content as any;
-        await axios.post('/api/offer', { title, slug: dashify(title), body, author }, {
+        await axios.post('/api/offer', { title, slug: dashify(title), body, imgUrl, author }, {
             headers: headers
         });
     }
     return (
         <Layout page='offer-new'>
             <div>
-                <UploadFile />
+                <UploadFile setImageCallback={setImageFromChild} />
                 <label htmlFor="title">Title</label>
                 <input
                     type="text"

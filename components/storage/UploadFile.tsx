@@ -4,10 +4,15 @@ import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/
 
 import { useRef, useState } from "react";
 
-const UploadFile = () => {
+const UploadFile = ({setImageCallback}: { setImageCallback: any }) => {
     const inputEl = useRef(null) as any
     const [imgUrl, setImgUrl] = useState('');
     const [value, setValue] = useState(0)
+
+    function setImage(imageUrl: string){
+        setImageCallback(imageUrl)
+        setImgUrl(imageUrl)
+    }
 
     function uploadFile() {
         var file = inputEl.current.files[0]
@@ -28,8 +33,8 @@ const UploadFile = () => {
                 alert(error);
             },
             () => {
-                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                    setImgUrl(downloadURL)
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL: string) => {
+                    setImage(downloadURL)
                 });
             }
         );
