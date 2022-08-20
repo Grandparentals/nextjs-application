@@ -6,14 +6,20 @@ import { useAuth } from '../../../context/AuthContext';
 import UploadFile from '../../../components/storage/UploadFile';
 
 const Offer = () => {
-    const { useSession } = useAuth() as { useSession: user };
-
-    
+    const { useSession } = useAuth() as { useSession: user }
 
     const [content, setContent] = useState({
         title: undefined,
         body: undefined,
     })
+
+    const [ imageUrl, setImageUrl ] = useState("")
+
+    const handleCallback = (childData: string) => {
+        setImageUrl(childData)
+        console.log(childData)
+    }
+
     const onChange = (e: any) => {
         const { value, name } = e.target;
         setContent(prevState => ({ ...prevState, [name]: value }));
@@ -39,7 +45,7 @@ const Offer = () => {
     return (
         <Layout page='offer-new'>
             <div>
-                <UploadFile />
+                <UploadFile parentCallback={handleCallback} />
                 <label htmlFor="title">Title</label>
                 <input
                     type="text"

@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import router from "next/router";
 import { session } from "../lib/session";
+import useUser from "../lib/useUser";
+import fetchJson, { FetchError } from '../lib/fetchJson'
 
 const authContextDefaultValues: authContextType = {
     useSession: {},
@@ -24,6 +26,12 @@ type Props = {
 };
 
 export function AuthProvider({ children }: Props) {
+
+    const { mutateUser } = useUser({
+        redirectTo: '/user',
+        redirectIfFound: false,
+    })
+
     const [ useSession, setSession ] = useState<user>();
     const [ user, setUser ] = useState<boolean|null>(null);
 
@@ -37,6 +45,13 @@ export function AuthProvider({ children }: Props) {
                 const token = credential?.accessToken;
                 // The signed-in user info.
                 const user = result.user as user;
+
+                console.log(user, token)
+                fetchJson('/api/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(user),
+                })
                 setSession(user)
                 setUser(true);
             })
@@ -66,8 +81,17 @@ export function AuthProvider({ children }: Props) {
     
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user: any) => {
+        onAuthStateChanged(auth, async (user: any) => {
             if (user) {
+
+                mutateUser(
+                    await fetchJson('/api/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(user),
+                    })
+                )
+
                 session.set('user', user)
                 user = user as user
                 setSession(user)

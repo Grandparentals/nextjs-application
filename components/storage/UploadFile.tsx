@@ -4,7 +4,7 @@ import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/
 
 import { useRef, useState } from "react";
 
-const UploadFile = () => {
+const UploadFile = ({ parentCallback }: { parentCallback: Function} ) => {
     const inputEl = useRef(null) as any
     const [imgUrl, setImgUrl] = useState('');
     const [value, setValue] = useState(0)
@@ -30,6 +30,7 @@ const UploadFile = () => {
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                     setImgUrl(downloadURL)
+                    parentCallback(downloadURL)
                 });
             }
         );
