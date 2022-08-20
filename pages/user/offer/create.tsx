@@ -6,24 +6,24 @@ import { useAuth } from '../../../context/AuthContext';
 import UploadFile from '../../../components/storage/UploadFile';
 
 const Offer = () => {
-    const { useSession } = useAuth() as { useSession: user }
+    const { useSession } = useAuth() as { useSession: user };
+
+    const [imgUrl, setImgUrl] = useState('');
+
+    const setImageFromChild = (imgString: string) => {
+        setImgUrl(imgString)
+    }
 
     const [content, setContent] = useState({
         title: undefined,
-        body: undefined,
+        body: undefined
     })
-
-    const [ imageUrl, setImageUrl ] = useState("")
-
-    const handleCallback = (childData: string) => {
-        setImageUrl(childData)
-        console.log(childData)
-    }
 
     const onChange = (e: any) => {
         const { value, name } = e.target;
         setContent(prevState => ({ ...prevState, [name]: value }));
     }
+
     const onSubmit = async () => {
         const author = {
             name: useSession.displayName,
@@ -37,15 +37,15 @@ const Offer = () => {
             'Authorization': 'lerigo'
         }
 
-        const { title, body }= content as any;
-        await axios.post('/api/offer', { title, slug: dashify(title), body, author }, {
+        const { title, body } = content as any;
+        await axios.post('/api/offer', { title, slug: dashify(title), body, imgUrl, author }, {
             headers: headers
         });
     }
     return (
         <Layout page='offer-new'>
             <div>
-                <UploadFile parentCallback={handleCallback} />
+                <UploadFile setImageCallback={setImageFromChild} />
                 <label htmlFor="title">Title</label>
                 <input
                     type="text"

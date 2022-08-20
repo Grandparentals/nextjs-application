@@ -4,10 +4,15 @@ import { getStorage, ref, getDownloadURL, uploadBytesResumable } from "firebase/
 
 import { useRef, useState } from "react";
 
-const UploadFile = ({ parentCallback }: { parentCallback: Function} ) => {
+const UploadFile = ({ setImageCallback }: { setImageCallback: any }) => {
     const inputEl = useRef(null) as any
     const [imgUrl, setImgUrl] = useState('');
     const [value, setValue] = useState(0)
+
+    function setImage(imageUrl: string) {
+        setImageCallback(imageUrl)
+        setImgUrl(imageUrl)
+    }
 
     function uploadFile() {
         var file = inputEl.current.files[0]
@@ -28,9 +33,8 @@ const UploadFile = ({ parentCallback }: { parentCallback: Function} ) => {
                 alert(error);
             },
             () => {
-                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                    setImgUrl(downloadURL)
-                    parentCallback(downloadURL)
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL: string) => {
+                    setImage(downloadURL)
                 });
             }
         );
@@ -40,7 +44,7 @@ const UploadFile = ({ parentCallback }: { parentCallback: Function} ) => {
     return (
         <>
             <progress value={value} max="100"></progress>
-            <input 
+            <input
                 type="file"
                 onChange={uploadFile}
                 ref={inputEl}
@@ -48,7 +52,7 @@ const UploadFile = ({ parentCallback }: { parentCallback: Function} ) => {
             {
                 !imgUrl &&
                 <div className='outerbar'>
-                        <div className='innerbar' style={{ width: `${value}%` }}>{value}%</div>
+                    <div className='innerbar' style={{ width: `${value}%` }}>{value}%</div>
                 </div>
             }
             {
