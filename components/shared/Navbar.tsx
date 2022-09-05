@@ -105,13 +105,29 @@ function Navbar({page}: {page: string}) {
                         </div>
                         <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
                             <Popover.Group as="nav" className="flex space-x-10 align-middle items-center">
+                                
+                                {!loading && isLogged &&
+                                    <Link href={'/user'}>
+                                        <a className={
+                                            `
+                                        text-base
+                                        font-medium
+                                        px-3
+                                        ${page == 'user' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}
+                                        `
+                                        }>
+                                            Dashboard
+                                        </a>
+                                    </Link>
+                                } 
+
                                 <Link href={'/professional/list'}>
                                     <a className={
                                         `
                                         text-base
                                         font-medium
                                         px-3
-                                        ${ page == 'professionals' ? "text-teal-600 hover:text-teal-900" : "text-gray-500 hover:text-gray-900" }
+                                        ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}
                                         `
                                     }>
                                         Médicos
@@ -223,8 +239,9 @@ function Navbar({page}: {page: string}) {
                                         ${!loading && isLogged ? "bg-red-600 hover:bg-red-700" : "bg-teal-600 hover:bg-teal-700"}
                                     `}
                                 >
+                                 
                                 {!loading && isLogged ? 
-                                        <span className='
+                                    <span className='
                                             inline-flex
                                             items-center
                                             justify-center'>
@@ -302,15 +319,19 @@ function Navbar({page}: {page: string}) {
                                 </div>
                             </div>
                             <div className="py-6 px-5">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Devs
-                                    </a>
-
-                                    {/* <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                        Empresas
-                                    </a> */}
-                                    
+                                <div className="grid grid-cols-1 gap-4">
+                                    {!loading && isLogged &&
+                                        <Link href={'/user'}>
+                                            <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                                                Dashboard
+                                            </a>
+                                        </Link>
+                                    } 
+                                    <Link href={'/professional/list'}>
+                                        <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                                            Médicos
+                                        </a>
+                                    </Link>
                                 </div>
                                 <div className="mt-6">
                                     <a

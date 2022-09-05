@@ -94,11 +94,11 @@ function Profile() {
 
   
     return (
-        <div className="py-10">
+        <div>
             
 
             {/* Page header */}
-            <div className="mx-auto max-w-3xl px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
+            <div className="mx-auto md:flex md:items-center md:justify-between">
                 <div className="flex items-center space-x-5">
                     <div className="flex-shrink-0">
                         <div className="relative">
@@ -111,13 +111,13 @@ function Profile() {
                         </div>
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold text-gray-900">Kristen</h1>
+                        <h1 className="text-2xl font-bold text-gray-900">Kristen Ramos</h1>
                         <p className="text-sm font-medium text-gray-500">
-                            Applied for{' '}
+                            Qualificada em{' '}
                             <a href="#" className="text-gray-900">
-                                Front End Developer
+                                Clínico Geral
                             </a>{' '}
-                            on <time dateTime="2020-08-25">August 25, 2020</time>
+                            em <time dateTime="2020-08-25">Agosto 25, 2020</time>
                         </p>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ function Profile() {
                 </div>
             </div>
 
-            <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+            <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 sm:px-0 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
                 <div className="space-y-6 lg:col-span-2 lg:col-start-1">
                     {/* Description list*/}
                     <section aria-labelledby="applicant-information-title">
