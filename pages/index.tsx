@@ -1,24 +1,28 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Layout from '../components/layout'
+import Cta from '../components/shared/Cta'
+import Features from '../components/shared/Features'
+import FeaturesGradient from '../components/shared/FeaturesGradient'
+import Hero from '../components/shared/Hero'
+import Sponsors from '../components/shared/Sponsors'
+import Stats from '../components/shared/Stats'
 
 const Home: NextPage = () => {
   
   return (
     <Layout page='home'>    
       <Head>
-        <title>The Devs Space</title>
+        <title>Medicine</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <h1 className="text-6xl font-semibold text-white">
-        Welcome to{' '}
-        <a className="text-violet-100 font-extralight" href="https://nextjs.org">
-          remoteu.org
-        </a>
-      </h1>
+      <Hero></Hero>
+      <Sponsors></Sponsors>
+      <Features></Features>
+      <FeaturesGradient></FeaturesGradient>
+      <Stats></Stats>
+      <Cta></Cta>
     </Layout> 
-
   )
 }
 
