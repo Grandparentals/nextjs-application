@@ -22,39 +22,41 @@ import {
     ShieldCheckIcon,
     UserGroupIcon,
     ViewGridIcon,
+    ChatIcon,
     XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon, PaperAirplaneIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import { faClose, faHeadSideHeart} from '@fortawesome/pro-solid-svg-icons';
+import { faClose, faHeadSideHeart, faPotFood} from '@fortawesome/pro-solid-svg-icons';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
+import { faBook, faChild, faComment } from '@fortawesome/free-solid-svg-icons';
 
 
 const solutions = [
     {
-        name: 'Agendamento',
-        description: 'Agendamento de consulta com os melhores médicos, acomopanhamento total de todo o processo online.',
-        href: '#',
-        icon: ClockIcon,
+        name: 'Lets talk',
+        description: "You just want to get a friend to meet from time to time for a chat and a coffe? There are a lot of people that are willing to have a chat with you.",
+        href: 'discover/talk',
+        icon: faComment,
     },
     {
-        name: 'Exames',
-        description: 'Após todos os exames anossa carteira digital mantem tudo organixzado para você e para seus médicos.',
-        href: '#',
-        icon: PaperAirplaneIcon,
+        name: 'Lets eat together',
+        description: 'If you don\'t like eating alone or you need help with preparing the food, please look at the people that can help you with that.',
+        href: '/discover/food',
+        icon: faPotFood,
     },
     { 
-        name: 'Remédios', 
-        description: "Além de manter tudo organizado para você, também auxiliamos que você não esqueca da hora do remédio.", 
-        href: '#', 
-        icon: ShieldCheckIcon 
+        name: 'Help with studies and homework', 
+        description: "If your kids needs somebody to help them with the homework you can look for people that can help them with that", 
+        href: '/discover/studies', 
+        icon: faBook 
     },
     {
-        name: 'Dentistas',
-        description: "Além de contar com toda a gama dos melhores médicos do pais, também mantemos os melhores dentistas em nossa base.",
-        href: '#',
-        icon: ViewGridIcon,
+        name: 'Kids care',
+        description: 'Find people that can help you take care of your kids. ',
+        href: '/discover/kids',
+        icon: faChild,
     },
 ]
 const callsToAction = [
@@ -184,7 +186,7 @@ function Navbar({page}: {page: string}) {
                                                                 <div className="flex md:h-full lg:flex-col">
                                                                     <div className="flex-shrink-0">
                                                                         <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
-                                                                            <item.icon className="h-6 w-6" aria-hidden="true" />
+                                                                            <FontAwesomeIcon icon={item.icon} className="h-6 w-6" aria-hidden="true" />
                                                                         </span>
                                                                     </div>
                                                                     <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
@@ -193,7 +195,7 @@ function Navbar({page}: {page: string}) {
                                                                             <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                                                                         </div>
                                                                         <p className="mt-2 text-sm font-medium text-teal-600 lg:mt-4">
-                                                                            Saiba mais <span aria-hidden="true">&rarr;</span>
+                                                                            Discover people <span aria-hidden="true">&rarr;</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
