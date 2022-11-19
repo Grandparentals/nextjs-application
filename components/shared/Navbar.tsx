@@ -24,9 +24,9 @@ import {
     ViewGridIcon,
     XIcon,
 } from '@heroicons/react/outline'
-import { ChevronDownIcon, PaperAirplaneIcon, PaperClipIcon, WifiIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon, PaperAirplaneIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import { faClose, faKitMedical, faStarshipFreighter } from '@fortawesome/pro-solid-svg-icons';
+import { faClose, faHeadSideHeart} from '@fortawesome/pro-solid-svg-icons';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 
@@ -93,8 +93,8 @@ function Navbar({page}: {page: string}) {
                         <Link href={'/'}>
                             <a className="flex font-bold text-teal-600 text-lg group">
                                 <span className="sr-only">Medicine</span>
-                                <FontAwesomeIcon icon={faKitMedical} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" />
-                                Medicine
+                                <FontAwesomeIcon icon={faHeadSideHeart} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" />
+                                GrandpaRentals
                             </a>
                         </Link>
                         <div className="-mr-2 -my-2 md:hidden">
@@ -130,7 +130,7 @@ function Navbar({page}: {page: string}) {
                                         ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}
                                         `
                                     }>
-                                        Médicos
+                                        Discover people
                                     </a>
                                 </Link>
                                 {/* <Link href={'/offer/list'}>
@@ -154,7 +154,7 @@ function Navbar({page}: {page: string}) {
                                                     'px-3 group bg-white rounded-md inline-flex items-center text-base font-medium border-2 border-transparent hover:text-gray-900 focus:text-white focus:bg-teal-600 focus:outline-none focus:border-teal-600 focus:rounded-md'
                                                 )}
                                             >
-                                                <span>Sobre</span>
+                                                <span>Types of help</span>
                                                 <ChevronDownIcon
                                                     className={classNames(
                                                         open ? 'text-gray-600' : 'text-gray-400',
@@ -199,21 +199,6 @@ function Navbar({page}: {page: string}) {
                                                                 </div>
                                                             </a>
                                                         ))}
-                                                    </div>
-                                                    <div className="bg-gray-50">
-                                                        <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                                                            {callsToAction.map((item) => (
-                                                                <div key={item.name} className="flow-root">
-                                                                    <a
-                                                                        href={item.href}
-                                                                        className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
-                                                                    >
-                                                                        <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                                                        <span className="ml-3">{item.name}</span>
-                                                                    </a>
-                                                                </div>
-                                                            ))}
-                                                        </div>
                                                     </div>
                                                 </Popover.Panel>
                                             </Transition>
@@ -260,7 +245,7 @@ function Navbar({page}: {page: string}) {
                                         <FontAwesomeIcon
                                             icon={faGoogle}
                                             className="w-4 h-4 mr-2" />
-                                        Login com Google
+                                        Login via Google
                                     </span>
                                 }
                                 </button>
@@ -323,13 +308,13 @@ function Navbar({page}: {page: string}) {
                                     {!loading && isLogged &&
                                         <Link href={'/user'}>
                                             <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                                Dashboard
+                                                TODO
                                             </a>
                                         </Link>
                                     } 
                                     <Link href={'/professional/list'}>
                                         <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                            Médicos
+                                            TODO
                                         </a>
                                     </Link>
                                 </div>

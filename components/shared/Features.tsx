@@ -16,11 +16,9 @@ function Features() {
                                 </span>
                             </div>
                             <div className="mt-6">
-                                <h2 className="text-3xl font-bold tracking-tight text-gray-900">Tudo o que um Médico precisa.</h2>
+                                <h2 className="text-3xl font-bold tracking-tight text-gray-900">TODO Long article</h2>
                                 <p className="mt-4 text-lg text-gray-500">
-                                    Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                                    porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at.
-                                    Lectus viverra dui tellus ornare pharetra.
+                                apien et ligula ullamcorper malesuada proin. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Odio tempor orci dapibus ultrices in iaculis nunc. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. Sagittis orci a scelerisque purus semper eget. Quis vel eros donec ac odio. Nisi est sit amet facilisis magna. Accumsan lacus vel facilisis volutpat est velit. Gravida quis blandit turpis cursus in. Quis hendrerit dolor magna eget est. Sit amet porttitor eget dolor morbi non arcu risus. Euismod quis viverra nibh cras pulvinar. Ultricies tristique nulla aliquet enim tortor at auctor urna nunc. Egestas integer eget aliquet nibh praesent tristique.
                                 </p>
                                 <div className="mt-6">
                                     <a
