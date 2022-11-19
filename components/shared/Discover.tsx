@@ -14,7 +14,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Endocrinologista',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -26,7 +26,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Clinico Geral',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -38,7 +38,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Oftalmologista',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -50,7 +50,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Endocrinologista',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -62,7 +62,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Clinico Geral',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -74,7 +74,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Oftalmologista',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -86,7 +86,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Endocrinologista',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -98,7 +98,7 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Clinico Geral',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
     {
         applicant: {
@@ -110,11 +110,11 @@ const applications = [
         date: '2020-01-07',
         dateFull: 'January 7, 2020',
         stage: 'Oftalmologista',
-        href: '/professional/detail',
+        href: '/discover/detail',
     },
 ]
 
-function Professionals() {
+function discover() {
 
   
     return (
@@ -163,4 +163,4 @@ function Professionals() {
     )
 }
 
-export default Professionals;
+export default discover;
