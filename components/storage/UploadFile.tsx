@@ -19,7 +19,7 @@ const UploadFile = ({ setImageCallback }: { setImageCallback: any }) => {
         if (!file) return;
 
         const firebaseApp = getApp();
-        const storage = getStorage(firebaseApp, "gs://remoteu-org.appspot.com");
+        const storage = getStorage(firebaseApp, "gs://medicine-40a75.appspot.com");
         const storageRef = ref(storage, `files/${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
 
