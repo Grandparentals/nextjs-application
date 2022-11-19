@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Layout from '../../components/layout'
-import Professionals from '../../components/shared/Professionals'
+import Discover from '../../components/shared/Discover'
 
 const Home: NextPage = () => {
   
   return (
-    <Layout page='professionals'>    
+    <Layout page='discover'>    
       <Head>
         <title>Discover people - Grandparentals</title>
         <link rel="icon" href="/favicon.ico" />
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
           <h1 className="text-4xl font-semibold text-teal-500 mb-6">
             People
           </h1>
-          <Professionals></Professionals>
+          <Discover></Discover>
         </div>
       </div>
     </Layout> 
