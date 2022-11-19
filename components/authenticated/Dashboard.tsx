@@ -149,7 +149,7 @@ function Dashboard() {
                                         </div>
                                     </div>
                                     <div className="mt-5 flex justify-center sm:mt-0">
-                                        <Link href={'/professional/detail'}>
+                                        <Link href={'/discover/detail'}>
                                             <a
                                                 className="flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
                                             >
