@@ -296,7 +296,7 @@ function Navbar({page}: {page: string}) {
                                                     className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"
                                                 >
                                                     <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
-                                                        <item.icon className="h-6 w-6" aria-hidden="true" />
+                                                        <FontAwesomeIcon icon={item.icon} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
                                                     <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
                                                 </a>
