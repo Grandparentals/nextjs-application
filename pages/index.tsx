@@ -7,7 +7,6 @@ import FeaturesGradient from '../components/shared/FeaturesGradient'
 import Hero from '../components/shared/Hero'
 import Sponsors from '../components/shared/Sponsors'
 import Stats from '../components/shared/Stats'
-import Blog from '../components/shared/Blog'
 
 const Home: NextPage = () => {
   
