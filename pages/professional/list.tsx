@@ -8,13 +8,13 @@ const Home: NextPage = () => {
   return (
     <Layout page='professionals'>    
       <Head>
-        <title>The Devs Space</title>
+        <title>Discover people - Grandparentals</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg-white">
         <div className="mx-auto max-w-4xl py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:items-center lg:justify-between lg:px-8 lg:py-6">
           <h1 className="text-4xl font-semibold text-teal-500 mb-6">
-            Médicos
+            People
           </h1>
           <Professionals></Professionals>
         </div>

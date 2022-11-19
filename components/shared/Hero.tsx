@@ -24,7 +24,7 @@ function Hero() {
                             <span className="block text-teal-200">Once again</span>
                         </h1>
                         <p className="mx-auto my-6 max-w-lg text-center text-xl text-teal-200 sm:max-w-3xl">
-                            Let people help you and  help others
+                            Help the people by letting them help you
                         </p>
                         <div className="mx-auto flex max-w-lg align-middle items-center space-x-3 pl-0 pr-16">
                             <label htmlFor="location" className="block text-sm font-medium text-gray-700">

@@ -5,7 +5,6 @@ import Cta from '../components/shared/Cta'
 import Features from '../components/shared/Features'
 import FeaturesGradient from '../components/shared/FeaturesGradient'
 import Hero from '../components/shared/Hero'
-import Sponsors from '../components/shared/Sponsors'
 import Stats from '../components/shared/Stats'
 
 const Home: NextPage = () => {
@@ -17,7 +16,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero></Hero>
-      <Sponsors></Sponsors>
       <Features></Features>
       <FeaturesGradient></FeaturesGradient>
       <Stats></Stats>

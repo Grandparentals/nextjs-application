@@ -24,9 +24,9 @@ import {
     ViewGridIcon,
     XIcon,
 } from '@heroicons/react/outline'
-import { ChevronDownIcon, PaperAirplaneIcon, PaperClipIcon, WifiIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon, PaperAirplaneIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import { faClose, faKitMedical, faStarshipFreighter } from '@fortawesome/pro-solid-svg-icons';
+import { faClose, faHeadSideHeart} from '@fortawesome/pro-solid-svg-icons';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 
@@ -93,7 +93,7 @@ function Navbar({page}: {page: string}) {
                         <Link href={'/'}>
                             <a className="flex font-bold text-teal-600 text-lg group">
                                 <span className="sr-only">Medicine</span>
-                                <FontAwesomeIcon icon={faKitMedical} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" />
+                                <FontAwesomeIcon icon={faHeadSideHeart} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" />
                                 GrandpaRentals
                             </a>
                         </Link>
@@ -130,7 +130,7 @@ function Navbar({page}: {page: string}) {
                                         ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}
                                         `
                                     }>
-                                        TODO
+                                        Discover people
                                     </a>
                                 </Link>
                                 {/* <Link href={'/offer/list'}>
