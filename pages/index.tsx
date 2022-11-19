@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   return (
     <Layout page='home'>    
       <Head>
-        <title>Medicine</title>
+        <title>Grandparentals2</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero></Hero>

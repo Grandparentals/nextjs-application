@@ -36,67 +36,16 @@ function Hero() {
                                 className=" block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm"
                                 defaultValue="Canada"
                             >
-                                <option>Selecione</option>
-                                <option>Acupuntura</option>
-                                <option>Alergia e Imunologia</option>
-                                <option>Anestesiologia</option>
-                                <option>Angiologia</option>
-                                <option>Cancerologia</option>
-                                <option>Cardiologia</option>
-                                <option>Cirurgia Cardiovascular</option>
-                                <option>Cirurgia da Mão</option>
-                                <option>Cirurgia de Cabeça e Pescoço</option>
-                                <option>Cirurgia do Aparelho Digestivo</option>
-                                <option>Cirurgia Geral</option>
-                                <option>Cirurgia Pediátrica</option>
-                                <option>Cirurgia Plástica</option>
-                                <option>Cirurgia Torácica</option>
-                                <option>Cirurgia Vascular</option>
-                                <option>Clínica Médica</option>
-                                <option>Coloproctologia</option>
-                                <option>Dermatologia</option>
-                                <option>Endocrinologia e Metabologia</option>
-                                <option>Endoscopia</option>
-                                <option>Gastroenterologia</option>
-                                <option>Genética Médica</option>
-                                <option>Geriatria</option>
-                                <option>Ginecologia e Obstetrícia</option>
-                                <option>Hematologia e Hemoterapia</option>
-                                <option>Homeopatia</option>
-                                <option>Infectologia</option>
-                                <option>Mastologia</option>
-                                <option>Medicina de Família e Comunidade</option>
-                                <option>Medicina do Trabalho</option>
-                                <option>Medicina de Tráfego</option>
-                                <option>Medicina Esportiva</option>
-                                <option>Medicina Física e Reabilitação</option>
-                                <option>Medicina Intensiva</option>
-                                <option>Medicina Legal e Perícia Médica</option>
-                                <option>Medicina Nuclear</option>
-                                <option>Medicina Preventiva e Social</option>
-                                <option>Nefrologia</option>
-                                <option>Neurocirurgia</option>
-                                <option>Neurologia</option>
-                                <option>Nutrologia</option>
-                                <option>Oftalmologia</option>
-                                <option>Ortopedia e Traumatologia</option>
-                                <option>Otorrinolaringologia</option>
-                                <option>Patologia</option>
-                                <option>Patologia Clínica/Medicina Laboratorial</option>
-                                <option>Pediatria</option>
-                                <option>Pneumologia</option>
-                                <option>Psiquiatria</option>
-                                <option>Radiologia e Diagnóstico por Imagem</option>
-                                <option>Radioterapia</option>
-                                <option>Reumatologia</option>
-                                <option>Urologia</option>
+                                <option>Child care</option>
+                                <option>Cooking</option>
+                                <option>Making relations</option>
                             </select>
                             <Link href="/professional/list">
                                 <button
                                     type="button"
                                     className="inline-flex items-center rounded-md border border-transparent bg-teal-600 px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                                 >
-                                    Buscar
+                                    Search
                                     <FontAwesomeIcon icon={faSearch} className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
                                 </button>
                             </Link>

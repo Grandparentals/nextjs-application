@@ -94,7 +94,7 @@ function Navbar({page}: {page: string}) {
                             <a className="flex font-bold text-teal-600 text-lg group">
                                 <span className="sr-only">Medicine</span>
                                 <FontAwesomeIcon icon={faKitMedical} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" />
-                                Medicine
+                                GrandpaRentals
                             </a>
                         </Link>
                         <div className="-mr-2 -my-2 md:hidden">
@@ -130,7 +130,7 @@ function Navbar({page}: {page: string}) {
                                         ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}
                                         `
                                     }>
-                                        Médicos
+                                        TODO
                                     </a>
                                 </Link>
                                 {/* <Link href={'/offer/list'}>
@@ -154,7 +154,7 @@ function Navbar({page}: {page: string}) {
                                                     'px-3 group bg-white rounded-md inline-flex items-center text-base font-medium border-2 border-transparent hover:text-gray-900 focus:text-white focus:bg-teal-600 focus:outline-none focus:border-teal-600 focus:rounded-md'
                                                 )}
                                             >
-                                                <span>Sobre</span>
+                                                <span>TODO category 2</span>
                                                 <ChevronDownIcon
                                                     className={classNames(
                                                         open ? 'text-gray-600' : 'text-gray-400',
@@ -260,7 +260,7 @@ function Navbar({page}: {page: string}) {
                                         <FontAwesomeIcon
                                             icon={faGoogle}
                                             className="w-4 h-4 mr-2" />
-                                        Login com Google
+                                        Login via Google
                                     </span>
                                 }
                                 </button>
@@ -323,13 +323,13 @@ function Navbar({page}: {page: string}) {
                                     {!loading && isLogged &&
                                         <Link href={'/user'}>
                                             <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                                Dashboard
+                                                TODO
                                             </a>
                                         </Link>
                                     } 
                                     <Link href={'/professional/list'}>
                                         <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                            Médicos
+                                            TODO
                                         </a>
                                     </Link>
                                 </div>
