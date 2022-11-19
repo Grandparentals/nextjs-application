@@ -121,28 +121,15 @@ function Profile() {
                         </p>
                     </div>
                 </div>
-                <div className="justify-stretch mt-6 flex flex-col-reverse space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-y-0 sm:space-x-3 sm:space-x-reverse md:mt-0 md:flex-row md:space-x-3">
-                    <button
-                        type="button"
-                        className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-gray-100"
-                    >
-                        Enviar mensagem
-                    </button>
-                    <button
-                        type="button"
-                        className="inline-flex items-center justify-center rounded-md border border-transparent bg-teal-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-gray-100"
-                    >
-                        Agendar consulta
-                    </button>
-                </div>
+                
             </div>
 
-            <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 sm:px-0 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
-                <div className="space-y-6 lg:col-span-2 lg:col-start-1">
+            <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 sm:px-0 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-1">
+                <div className="space-y-6 lg:col-span-1 lg:col-start-1">
                     {/* Description list*/}
                     <section aria-labelledby="applicant-information-title">
                         <div className="bg-white shadow sm:rounded-lg">
-                            <div className="px-4 py-5 sm:px-6">
+                            <div className="px-12 py-5">
                                 <h2 id="applicant-information-title" className="text-lg font-medium leading-6 text-gray-900">
                                     Informações do Médico
                                 </h2>
@@ -199,14 +186,7 @@ function Profile() {
                                     </div>
                                 </dl>
                             </div>
-                            <div>
-                                <a
-                                    href="#"
-                                    className="block bg-gray-50 px-4 py-4 text-center text-sm font-medium text-gray-500 hover:text-gray-700 sm:rounded-b-lg"
-                                >
-                                    Read full application
-                                </a>
-                            </div>
+                            
                         </div>
                     </section>
 
@@ -300,64 +280,7 @@ function Profile() {
                     </section>
                 </div>
 
-                <section aria-labelledby="timeline-title" className="lg:col-span-1 lg:col-start-3">
-                    <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
-                        <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
-                            Timeline
-                        </h2>
-
-                        {/* Activity Feed */}
-                        <div className="mt-6 flow-root">
-                            <ul role="list" className="-mb-8">
-                                {timeline.map((item, itemIdx) => (
-                                    <li key={item.id}>
-                                        <div className="relative pb-8">
-                                            {itemIdx !== timeline.length - 1 ? (
-                                                <span
-                                                    className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : null}
-                                            <div className="relative flex space-x-3">
-                                                <div>
-                                                    <span
-                                                        className={classNames(
-                                                            item.type.bgColorClass,
-                                                            'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white'
-                                                        )}
-                                                    >
-                                                        <item.type.icon className="h-5 w-5 text-white" aria-hidden="true" />
-                                                    </span>
-                                                </div>
-                                                <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                                                    <div>
-                                                        <p className="text-sm text-gray-500">
-                                                            {item.content}{' '}
-                                                            <a href="#" className="font-medium text-gray-900">
-                                                                {item.target}
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                    <div className="whitespace-nowrap text-right text-sm text-gray-500">
-                                                        <time dateTime={item.datetime}>{item.date}</time>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="justify-stretch mt-6 flex flex-col">
-                            {/* <button
-                                type="button"
-                                className="inline-flex items-center justify-center rounded-md border border-transparent bg-teal-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
-                            >
-                                Advance to offer
-                            </button> */}
-                        </div>
-                    </div>
-                </section>
+           
             </div>
         </div>
     )
