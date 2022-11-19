@@ -1,9 +1,29 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Layout from '../../components/layout'
-import Profile from '../../components/shared/Profile'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import Layout from '../../../components/layout'
+import Profile from '../../../components/shared/Profile'
 
 const Home: NextPage = () => {
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const axiosRequest = async () => {
+      const { uri } = router.query;
+      console.log(uri)
+      // if (id) {
+      //   const res = await axios.get(`/api/offer/${id}`);
+      //   const { title, body } = res.data;
+      //   setContent({
+      //     title,
+      //     body
+      //   })
+      // }
+    }
+    axiosRequest()
+  }, [router])
 
   return (
     <Layout page='profile'>    
