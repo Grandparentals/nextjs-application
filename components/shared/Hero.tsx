@@ -13,10 +13,10 @@ function Hero() {
                     <div className="absolute inset-0">
                         <img
                             className="h-full w-full object-cover"
-                            src="https://www.rev.com/blog/wp-content/uploads/2021/01/Medical-Transcription.jpg"
+                            src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                             alt="People working on laptops"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-teal-800 to-teal-700 mix-blend-multiply" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-300 mix-blend-multiply" />
                     </div>
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                         <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
