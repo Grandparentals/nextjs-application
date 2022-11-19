@@ -123,7 +123,7 @@ function Navbar({page}: {page: string}) {
                                     </Link>
                                 } 
 
-                                <Link href={'/professional/list'}>
+                                <Link href={'/discover/list'}>
                                     <a className={
                                         `
                                         text-base
@@ -314,7 +314,7 @@ function Navbar({page}: {page: string}) {
                                             </a>
                                         </Link>
                                     } 
-                                    <Link href={'/professional/list'}>
+                                    <Link href={'/discover/list'}>
                                         <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                                             TODO
                                         </a>
