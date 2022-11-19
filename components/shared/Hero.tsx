@@ -1,9 +1,24 @@
 import { faSearch } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useState } from "react";
 
 function Hero() {
 
+
+    const [content, setContent] = useState({
+        skill: undefined,
+        location: undefined
+    })
+
+    const onChange = (e: any) => {
+        const { value, name } = e.target;
+        setContent(prevState => ({ ...prevState, [name]: value }));
+    }
+
+    const onSubmit = () => {
+        console.log(content)
+    }
   
     return (
         <div className="relative">
@@ -27,28 +42,37 @@ function Hero() {
                             Help the people by letting them help you
                         </p>
                         <div className="mx-auto flex max-w-lg align-middle items-center space-x-3 pl-0 pr-16">
-                            <label htmlFor="location" className="block text-sm font-medium text-gray-700">
-                                Especialidades
-                            </label>
-                            <select
-                                id="location"
+                            <input
+                                type="text"
                                 name="location"
-                                className=" block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-teal-500 focus:outline-none focus:ring-teal-500 sm:text-sm"
-                                defaultValue="Canada"
+                                id="location"
+                                value={content.location}
+                                onChange={onChange}
+                                className="block w-full rounded-md border-gray-300sm:text-sm"
+                                placeholder="Poznan"
+                            />
+                            <select
+                                id="skill"
+                                name="skill"
+                                className=" block w-full rounded-md border-gray-300 sm:text-sm"
+                                value={content.skill}
+                                onChange={onChange}
                             >
-                                <option>Child care</option>
-                                <option>Cooking</option>
-                                <option>Making relations</option>
+                                <option>Select...</option>
+                                <option value={'child-care'}>Child care</option>
+                                <option value={'cooking'}>Cooking</option>
+                                <option value={'making-relations'}>Making relations</option>
                             </select>
-                            <Link href="/professional/list">
-                                <button
-                                    type="button"
-                                    className="inline-flex items-center rounded-md border border-transparent bg-teal-600 px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
-                                >
-                                    Search
-                                    <FontAwesomeIcon icon={faSearch} className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
-                                </button>
-                            </Link>
+                            
+                            <button
+                                onClick={onSubmit}
+                                type="button"
+                                className="inline-flex items-center rounded-md border border-transparent bg-teal-600 px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                            >
+                                Search
+                                <FontAwesomeIcon icon={faSearch} className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+                            </button>
+                            
                         </div>
                     </div>
                 </div>

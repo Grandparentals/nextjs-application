@@ -104,7 +104,24 @@ const Offer = () => {
                                     </div>
                                 </div>
 
-                                <div className="col-span-6 sm:col-span-1">
+                                <div className="col-span-6 lg:col-span-2">
+                                    <label htmlFor="location" className="block text-sm font-medium text-gray-700">
+                                        Location
+                                    </label>
+                                    <div className="mt-1 flex rounded-md shadow-sm">
+                                        <input
+                                            type="text"
+                                            name="location"
+                                            id="location"
+                                            value={content.location}
+                                            onChange={onChange}
+                                            className="block w-full flex-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                            placeholder="Poznan"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="col-span-6 lg:col-span-2">
                                     <label htmlFor="cellphone" className="block text-sm font-medium text-gray-700">
                                        Cellphone
                                     </label>
@@ -122,7 +139,7 @@ const Offer = () => {
                                     </div>
                                 </div>
 
-                                <div className="col-span-6 sm:col-span-2">
+                                <div className="col-span-6 lg:col-span-2">
                                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                                         Phone
                                     </label>
