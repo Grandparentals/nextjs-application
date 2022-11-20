@@ -15,6 +15,8 @@ const Offer = () => {
 
     const [imgUrl, setImgUrl] = useState('');
 
+    const [selectedSkills, setSelectedSkills] = useState([])
+
     const setImageFromChild = (imgString: string) => {
         setImgUrl(imgString)
     }
@@ -30,6 +32,7 @@ const Offer = () => {
         professionalSkills: undefined,
         cellphone: undefined,
         phone: undefined,
+        skills: undefined,
         openSkills: undefined,
     })
 
@@ -51,27 +54,69 @@ const Offer = () => {
             'Authorization': 'lerigo'
         }
 
-        const { about, type, location, department, fullName, professionalSkills, cellphone, phone, openSkills } = content as any;
+        const { about, type, location, department, fullName, professionalSkills, cellphone, phone, skills, openSkills } = content as any;
+
+        const parsedOpenSkills = [] as Array<string>
+        openSkills.split(',').map((c: string) => parsedOpenSkills.push(dashify(c)))
+
+        const payload = {
+            slug: `${dashify(fullName)}-${author.uid}`,
+            about,
+            imgUrl,
+            type,
+            location,
+            department,
+            fullName,
+            professionalSkills,
+            cellphone,
+            phone,
+            skills: [
+                ...selectedSkills,
+                ...parsedOpenSkills
+            ],
+            closeDate: new Date(),
+            closeDateFull: new Date(),
+            author,
+        };
         await axios.post('/api/offer', 
-        { 
-                slug: `${dashify(fullName)}-${author.uid}`, 
-                about, 
-                imgUrl,
-                type,
-                location,
-                department,
-                fullName,
-                professionalSkills,
-                cellphone,
-                phone,
-                openSkills,
-                closeDate: new Date(),
-                closeDateFull: new Date(), 
-                author,
-            }, {
+         payload, {
             headers: headers
         });
     }
+
+    const skills = [
+        {
+            title: "Kid Care",
+            description: "Like to take care o the kids"
+        },
+        {
+            title: "Home Care",
+            description: "Like to take care o the kids"
+        },
+        {
+            title: "Dog Care",
+            description: "Like to take care o the kids"
+        }
+    ]
+
+    const [checkedState, setCheckedState] = useState(
+        new Array(skills.length).fill(false)
+    );
+
+    const handleOnChange = (position: any) => {
+        const updatedCheckedState = checkedState.map((item, index) =>
+            index === position ? !item : item
+        );
+
+        setCheckedState(updatedCheckedState);
+
+        const skillsSelected = [] as any
+
+        checkedState.map((v, i) => { v ? skillsSelected.push(dashify(skills[i].title)):''})
+
+        setSelectedSkills(skillsSelected)
+    };
+
     return (
         <Layout page='offer-new'>
             <form className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:py-6" action="javascript:void(0)" method="POST">
@@ -212,65 +257,34 @@ const Offer = () => {
                                 <div className="col-span-6 sm:col-span-6">
                                     <fieldset className="border-t border-b border-gray-200">
                                         <div className="divide-y divide-gray-200">
-                                            <div className="relative flex items-start py-4">
-                                                <div className="min-w-0 flex-1 text-sm">
-                                                    <label htmlFor="comments" className="font-medium text-gray-700">
-                                                        Comments
-                                                        <p id="comments-description" className="text-gray-500">
-                                                            Get notified when someones posts a comment on a posting.
-                                                        </p>
-                                                    </label>
+                                            {skills.map(({ title, description }, index) => {
+                                                return (
+                                                    <div className="relative flex items-start py-4" key={index}>
+                                                        <div className="min-w-0 flex-1 text-sm">
+                                                            <label htmlFor={`custom-checkbox-${index}`} className="font-medium text-gray-700">
+                                                                {title}
+                                                                <p id={`custom-checkbox-${index}-description`} className="text-gray-500">
+                                                                   {description}
+                                                                </p>
+                                                            </label>
 
-                                                </div>
-                                                <div className="ml-3 flex h-5 items-center">
-                                                    <input
-                                                        id="comments"
-                                                        aria-describedby="comments-description"
-                                                        name="comments"
-                                                        type="checkbox"
-                                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="relative flex items-start py-4">
-                                                <div className="min-w-0 flex-1 text-sm">
-                                                    <label htmlFor="candidates" className="font-medium text-gray-700">
-                                                        Candidates
-                                                        <p id="candidates-description" className="text-gray-500">
-                                                            Get notified when a candidate applies for a job.
-                                                        </p>
-                                                    </label>
-
-                                                </div>
-                                                <div className="ml-3 flex h-5 items-center">
-                                                    <input
-                                                        id="candidates"
-                                                        aria-describedby="candidates-description"
-                                                        name="candidates"
-                                                        type="checkbox"
-                                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="relative flex items-start py-4">
-                                                <div className="min-w-0 flex-1 text-sm">
-                                                    <label htmlFor="offers" className="font-medium text-gray-700">
-                                                        Offers
-                                                        <p id="offers-description" className="text-gray-500">
-                                                            Get notified when a candidate accepts or rejects an offer.
-                                                        </p>
-                                                    </label>
-                                                </div>
-                                                <div className="ml-3 flex h-5 items-center">
-                                                    <input
-                                                        id="offers"
-                                                        aria-describedby="offers-description"
-                                                        name="offers"
-                                                        type="checkbox"
-                                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                                    />
-                                                </div>
-                                            </div>
+                                                        </div>
+                                                        <div className="ml-3 flex h-5 items-center">
+                                                            <input
+                                                                id={`custom-checkbox-${index}`}
+                                                                name={title}
+                                                                value={title}
+                                                                checked={checkedState[index]}
+                                                                onChange={() => handleOnChange(index)}
+                                                                aria-describedby="comments-description"
+                                                                type="checkbox"
+                                                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                            
                                         </div>
                                     </fieldset>
                                 </div>
@@ -288,13 +302,13 @@ const Offer = () => {
                         <div className="mt-5 md:col-span-2 md:mt-0">
                             <div className="grid grid-cols-6 gap-6">
                                 <div className="col-span-6 sm:col-span-6">
-                                    <label htmlFor="Skills" className="block text-sm font-medium text-gray-700">
+                                    <label htmlFor="openSkills" className="block text-sm font-medium text-gray-700">
                                         Skills
                                     </label>
                                     <input
                                         type="text"
-                                        name="skills"
-                                        id="skills"
+                                        name="openSkills"
+                                        id="openSkills"
                                         value={content.openSkills}
                                         onChange={onChange}
                                         className="block w-full flex-1 rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"

@@ -46,7 +46,6 @@ export function AuthProvider({ children }: Props) {
                 // The signed-in user info.
                 const user = result.user as user;
 
-                console.log(user, token)
                 fetchJson('/api/login', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
