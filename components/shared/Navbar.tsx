@@ -265,16 +265,16 @@ function Navbar({page}: {page: string}) {
                                     <nav>
                                         <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
                                             {solutions.map((item) => (
-                                                <a
-                                                    key={item.name}
-                                                    href={item.href}
-                                                    className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"
-                                                >
-                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
-                                                        <FontAwesomeIcon icon={item.icon} className="h-6 w-6" aria-hidden="true" />
-                                                    </div>
-                                                    <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
-                                                </a>
+                                                <Link key={item.name} href={item.href}>
+                                                    <a
+                                                        className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"
+                                                    >
+                                                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
+                                                            <FontAwesomeIcon icon={item.icon} className="h-6 w-6" aria-hidden="true" />
+                                                        </div>
+                                                        <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
+                                                    </a>
+                                                </Link>
                                             ))}
                                            
                                             <Link href={'/discover/list/all'}>
