@@ -86,17 +86,21 @@ const Offer = () => {
 
     const skills = [
         {
-            title: "Kid Care",
-            description: "Like to take care o the kids"
+            title: 'Lets talk',
+            description: "You just want to get a friend to meet from time to time for a chat and a coffe? There are a lot of people that are willing to have a chat with you.",
         },
         {
-            title: "Home Care",
-            description: "Like to take care o the kids"
+            title: 'Lets eat together',
+            description: 'If you don\'t like eating alone or you need help with preparing the food, please look at the people that can help you with that.',
         },
         {
-            title: "Dog Care",
-            description: "Like to take care o the kids"
-        }
+            title: 'Help with studies and homework',
+            description: "If your kids needs somebody to help them with the homework you can look for people that can help them with that",
+        },
+        {
+            title: 'Kids care',
+            description: 'Find people that can help you take care of your kids. ',
+        },
     ]
 
     const [checkedState, setCheckedState] = useState(
