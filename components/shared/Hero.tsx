@@ -25,7 +25,7 @@ function Hero() {
 
     const onSubmit = () => {
         const { location, skill } = content as any
-        router.push(`/discover/list/${dashify(location)}${skill ? `/${dashify(skill)}` : ''}`)
+        router.push(`/discover/list/${location ? dashify(location) : 'none'}${skill ? `/${dashify(skill)}` : ''}`)
     }
   
     return (

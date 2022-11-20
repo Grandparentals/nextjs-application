@@ -22,7 +22,7 @@ const solutions = [
     {
         name: 'Lets talk',
         description: "You just want to get a friend to meet from time to time for a chat and a coffe? There are a lot of people that are willing to have a chat with you.",
-        href: 'discover/list/none/lets-talk',
+        href: '/discover/list/none/lets-talk',
         icon: faComment,
     },
     {
