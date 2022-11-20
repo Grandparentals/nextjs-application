@@ -1,10 +1,13 @@
 import Head from 'next/head'
+import { useEffect } from 'react';
 import Layout from '../../../components/layout'
 import Discover from '../../../components/shared/Discover'
 import db from '../../../lib/db';
 
-const Page = (props: any) => {
-  console.log(props)
+const Page = ({registers}: {registers: Array<Object>}) => {
+
+
+  
   return (
     <Layout page='discover'>    
       <Head>
@@ -16,7 +19,7 @@ const Page = (props: any) => {
           <h1 className="text-4xl font-semibold text-teal-500 mb-6">
             People
           </h1>
-          <Discover></Discover>
+          <Discover list={registers}></Discover>
         </div>
       </div>
     </Layout> 
@@ -26,11 +29,20 @@ const Page = (props: any) => {
 
 export const getServerSideProps = async (context: any) => {
   const { uri } = context.params;
-  const res = await db.collection("offers").where("location", "==", uri[0]).get()
-  const entry = res.docs.map(entry => entry.data());
+  let res;
+
+  if(uri[0] == 'all')
+    res = await db.collection("offers").get();
+  else if (uri[0] && uri[1])
+    res = await db.collection("offers").where("location", "==", uri[0]).where('skills', 'array-contains',
+      uri[1]).get();
+  else 
+    res = await db.collection("offers").where("location", "==", uri[0]).get();
+
+  const registers = res.docs.map(entry => entry.data());
   return {
     props: {
-      uri
+      registers
     }
   }
 }
