@@ -2,9 +2,21 @@ import { AcademicCapIcon, ClockIcon, ReceiptRefundIcon, UsersIcon } from "@heroi
 import { CheckIcon, ViewListIcon } from "@heroicons/react/solid"
 import Link from "next/link"
 import Patients from "./Patients"
+import { useAuth } from '../../context/AuthContext';
+import { useEffect, useState } from "react";
+
 
 function Dashboard() {
 
+    const { useSession } = useAuth() as { useSession: user };
+
+    const [ author, setAuthor ] = useState() as any;
+
+    useEffect(() => {
+        if(useSession)
+            setAuthor(useSession);
+    }, [useSession])
+    
     const user = {
         name: 'Kristen Ramos',
         email: 'kristen.ramos@example.com',
@@ -127,9 +139,9 @@ function Dashboard() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:py-6">
             <h1 className="sr-only">Profile</h1>
             {/* Main 3 column grid */}
-            <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
+            <div className="grid grid-cols-1 items-start gap-4  lg:gap-8">
                 {/* Left column */}
-                <div className="grid grid-cols-1 gap-4 lg:col-span-2">
+                <div className="grid grid-cols-1 gap-4">
                     {/* Welcome panel */}
                     <section aria-labelledby="profile-overview-title">
                         <div className="overflow-hidden rounded-lg bg-white shadow">
@@ -140,124 +152,23 @@ function Dashboard() {
                                 <div className="sm:flex sm:items-center sm:justify-between">
                                     <div className="sm:flex sm:space-x-5">
                                         <div className="flex-shrink-0">
-                                            <img className="mx-auto h-20 w-20 rounded-full" src={user.imageUrl} alt="" />
+                                            <img className="mx-auto h-20 w-20 rounded-full" src={author?.photoURL} alt="" />
                                         </div>
                                         <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
                                             <p className="text-sm font-medium text-gray-600">Welcome back,</p>
-                                            <p className="text-xl font-bold text-gray-900 sm:text-2xl">{user.name}</p>
-                                            <p className="text-sm font-medium text-gray-600">{user.role}</p>
+                                            <p className="text-xl font-bold text-gray-900 sm:text-2xl">{author?.displayName}</p>
+                                            <p className="text-sm font-medium text-gray-600">{author?.email}</p>
                                         </div>
-                                    </div>
-                                    <div className="mt-5 flex justify-center sm:mt-0">
-                                        <Link href={'/user/offer/create'}>
-                                            <a
-                                                className="flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
-                                            >
-                                                Edit profile
-                                            </a>
-                                        </Link>
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="grid grid-cols-1 divide-y divide-gray-200 border-t border-gray-200 bg-gray-50 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
-                                {stats.map((stat) => (
-                                    <div key={stat.label} className="px-6 py-5 text-center text-sm font-medium">
-                                        <span className="text-gray-900">{stat.value}</span>{' '}
-                                        <span className="text-gray-600">{stat.label}</span>
-                                    </div>
-                                ))}
-                            </div> */}
+                            
                         </div>
                     </section>
 
                     {/* Actions panel */}
                     <section aria-labelledby="quick-links-title">
                         <Patients></Patients>
-                    </section>
-                </div>
-
-                {/* Right column */}
-                <div className="grid grid-cols-1 gap-4">
-
-                    {/* Recent Hires */}
-                    <section aria-labelledby="recent-hires-title">
-                        <div className="overflow-hidden rounded-lg bg-white shadow">
-                            <div className="p-6">
-                                <h2 className="text-base font-medium text-gray-900" id="recent-hires-title">
-                                    Últimos Atendimentos
-                                </h2>
-                                <div className="mt-6 flow-root">
-                                    <ul role="list" className="-my-5 divide-y divide-gray-200">
-                                        {recentHires.map((person) => (
-                                            <li key={person.handle} className="py-4">
-                                                <div className="flex items-center space-x-4">
-                                                    <div className="flex-shrink-0">
-                                                        <img className="h-8 w-8 rounded-full" src={person.imageUrl} alt="" />
-                                                    </div>
-                                                    <div className="min-w-0 flex-1">
-                                                        <p className="truncate text-sm font-medium text-gray-900">{person.name}</p>
-                                                        <p className="truncate text-sm text-gray-500">{'@' + person.handle}</p>
-                                                    </div>
-                                                    <div>
-                                                        <a
-                                                            href={person.href}
-                                                            className="inline-flex items-center rounded-full border border-gray-300 bg-white px-2.5 py-0.5 text-sm font-medium leading-5 text-gray-700 shadow-sm hover:bg-gray-50"
-                                                        >
-                                                            View
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className="mt-6">
-                                    <a
-                                        href="#"
-                                        className="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
-                                    >
-                                        View all
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Announcements */}
-                    <section aria-labelledby="announcements-title">
-                        <div className="overflow-hidden rounded-lg bg-white shadow">
-                            <div className="p-6">
-                                <h2 className="text-base font-medium text-gray-900" id="announcements-title">
-                                    Últimas Notícias
-                                </h2>
-                                <div className="mt-6 flow-root">
-                                    <ul role="list" className="-my-5 divide-y divide-gray-200">
-                                        {announcements.map((announcement) => (
-                                            <li key={announcement.id} className="py-5">
-                                                <div className="relative focus-within:ring-2 focus-within:ring-cyan-500">
-                                                    <h3 className="text-sm font-semibold text-gray-800">
-                                                        <a href={announcement.href} className="hover:underline focus:outline-none">
-                                                            {/* Extend touch target to entire panel */}
-                                                            <span className="absolute inset-0" aria-hidden="true" />
-                                                            {announcement.title}
-                                                        </a>
-                                                    </h3>
-                                                    <p className="mt-1 text-sm text-gray-600 line-clamp-2">{announcement.preview}</p>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className="mt-6">
-                                    <a
-                                        href="#"
-                                        className="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
-                                    >
-                                        View all
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     </section>
                 </div>
             </div>

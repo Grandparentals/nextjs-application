@@ -17,8 +17,6 @@ async function listOffers (
     try {
 
         const offers = await db.collection('offers').where('author.uid', '==', req.session.user?.uid).get()
-        
-        // db.collection('offers').orderBy('created').get();
         const offersData = offers.docs.map(entry => ({
             id: entry.id,
             ...entry.data()
