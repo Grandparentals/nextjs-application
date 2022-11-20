@@ -2,6 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import Image from 'next/image'
 
 
 function Patients() {
@@ -64,7 +65,13 @@ function Patients() {
                                             <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                                                 <div className="flex items-center">
                                                     <div className="h-10 w-10 flex-shrink-0">
-                                                        <img className="h-10 w-10 rounded-full" src={person.imgUrl} alt="" />
+                                                        <Image
+                                                            src={person.imgUrl}
+                                                            alt="Picture of the author"
+                                                            width={64}
+                                                            height={64}
+                                                            className="h-16 w-16 rounded-full"
+                                                        />
                                                     </div>
                                                     <div className="ml-4">
                                                         <div className="font-medium text-gray-900">{person.fullName}</div>

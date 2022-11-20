@@ -1,7 +1,9 @@
-import { faEnvelope, faLightbulbOn, faExclamation, faExclamationTriangle } from '@fortawesome/pro-solid-svg-icons';
+import { faLightbulbOn, faExclamationTriangle } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckCircleIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import Link from 'next/link';
+import Image from 'next/image'
+
 
 function discover({ list }: { list: Array<Object> }) {
     
@@ -17,7 +19,13 @@ function discover({ list }: { list: Array<Object> }) {
                                 <div className="flex items-center px-4 py-4 sm:px-6">
                                     <div className="flex min-w-0 flex-1 items-center">
                                         <div className="flex-shrink-0">
-                                            <img className="h-12 w-12 rounded-full" src={application.imgUrl} alt="" />
+                                            <Image
+                                                src={application?.imgUrl}
+                                                alt="Picture of the author"
+                                                width={64}
+                                                height={64}
+                                                className="h-16 w-16 rounded-full"
+                                            />
                                         </div>
                                         <div className="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
                                             <div>

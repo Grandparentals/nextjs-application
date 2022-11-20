@@ -12,8 +12,7 @@ const Home: NextPage = () => {
   return (
     <Layout page='home'>    
       <Head>
-        <title>Grandparentals2</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>GrandParentals</title>
       </Head>
       <Hero></Hero>
       <Features></Features>
