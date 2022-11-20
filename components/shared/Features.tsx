@@ -1,15 +1,59 @@
+import { faHandshake, faPhone, faScroll } from "@fortawesome/free-solid-svg-icons";
+import { faEyes } from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InboxIcon, SparklesIcon } from "@heroicons/react/outline";
 import { useAuth } from "../../context/AuthContext";
 
+const incentives = [
+    {
+        name: 'Notice the person in need',
+        description: "Thee first thing to bring the change is to notice the need and talk with the person.",
+        imageSrc: faEyes,
+    },
+    {
+        name: 'Register the person',
+        description: 'After you log in to the system you are able to create a profile of a person that is willing to share their time and talents with others. The profile contains personal information about the person, their skills and goals',
+        imageSrc: faScroll,
+    },
+    {
+        name: 'Let other people contact the person',
+        description: "The created profile will be publicly available so the person thet would'd use the help will be able the people to help them or just to talk to and spend some time together.",
+        imageSrc: faPhone,
+    },
+    {
+        name: 'Create new relations',
+        description: "When people can find each other we believe that we are capable of introducing new human relations to the society.",
+        imageSrc: faHandshake,
+    },
+]
+
 function Features() {
     const { login, logout } = useAuth();
-
 
     return (
         <div className="relative overflow-hidden pt-16 pb-32">
             <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />
             <div className="relative">
+                <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-1 lg:gap-24 lg:px-8">
+
+                    <div className="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+                        <div className="bg-gray-50">
+                            <div className="mx-auto max-w-2xl py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
+                                <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
+                                    {incentives.map((incentive) => (
+                                        <div key={incentive.name}>
+                                            <FontAwesomeIcon icon={incentive.imageSrc} className="h-16 w-16 text-black mx-auto"  aria-hidden="true" />
+                                            <h3 className="mt-6 text-xl font-bold tracking-tight text-gray-900">{incentive.name}</h3>
+                                            <p className="mt-2 text-lg text-gray-500">{incentive.description}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+
                     <div className="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
                         <div>
 
@@ -23,14 +67,14 @@ function Features() {
                                     Help them register in our platform and find new purpose in life.
                                 </p>
                                 <div className="mt-6">
-                                <div className="mt-6">
-                            {<a
-                                href="#"
-                                className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
-                            >
-                                Register to the portal
-                            </a>}
-                        </div>
+                                    <div className="mt-6">
+                                        {<a
+                                            href="#"
+                                            className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
+                                        >
+                                            Register to the portal
+                                        </a>}
+                                    </div>
                                 </div>
                             </div>
                         </div>
