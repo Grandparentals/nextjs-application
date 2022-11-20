@@ -1,5 +1,5 @@
-import { faHandshake, faPhone, faScroll } from "@fortawesome/free-solid-svg-icons";
-import { faEyes } from "@fortawesome/pro-solid-svg-icons";
+import { faGroupArrowsRotate, faHandshake, faPeopleGroup, faScroll } from "@fortawesome/free-solid-svg-icons";
+import { faCompass, faPhone, faEyes, faRegistered, faIdCard, faIdCardAlt } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InboxIcon, SparklesIcon } from "@heroicons/react/outline";
 import { useAuth } from "../../context/AuthContext";
@@ -8,22 +8,22 @@ const incentives = [
     {
         name: 'Notice the person in need',
         description: "The first thing to bring the change is to notice the need and talk with the person.",
-        imageSrc: faEyes,
+        imageSrc: faCompass,
     },
     {
         name: 'Register the person',
         description: 'After you log in to the system, you are able to create a profile of a person who is willing to share their time and talents with others. The profile contains personal information about the person, their skills, and goals.',
-        imageSrc: faScroll,
+        imageSrc: faIdCardAlt,
     },
     {
         name: 'Let other people contact the person',
         description: "The created profile will be publicly available, so the person who would use the help will be able to find people to help them or just to talk to and spend some time together.",
-        imageSrc: faPhone,
+        imageSrc: faGroupArrowsRotate,
     },
     {
         name: 'Create new relations',
         description: "When people can find each other we believe that we are capable of introducing new human relations to the society.",
-        imageSrc: faHandshake,
+        imageSrc: faPeopleGroup,
     },
 ]
 
@@ -31,19 +31,17 @@ function Features() {
     const { login, logout } = useAuth();
 
     return (
-        <div className="relative overflow-hidden pt-16 pb-32">
-            <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />
+        <div className="relative overflow-hidden pt-3 pb-32">
             <div className="relative">
                 <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-1 lg:gap-24 lg:px-8">
-
                     <div className="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
                         <div className="bg-gray-50">
-                            <div className="mx-auto max-w-2xl py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
+                            <div className="mx-auto max-w-2xl py-12 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                                 <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
                                     {incentives.map((incentive) => (
                                         <div key={incentive.name}>
-                                            <FontAwesomeIcon icon={incentive.imageSrc} className="h-16 w-16 text-black mx-auto" aria-hidden="true" />
-                                            <h3 className="mt-6 text-xl font-bold tracking-tight text-gray-900">{incentive.name}</h3>
+                                            <FontAwesomeIcon icon={incentive.imageSrc} className="h-16 w-16 text-teal-500 mx-auto"  aria-hidden="true" />
+                                            <h3 className="mt-6 text-xl font-bold tracking-tight text-teal-600">{incentive.name}</h3>
                                             <p className="mt-2 text-lg text-gray-500">{incentive.description}</p>
                                         </div>
                                     ))}
