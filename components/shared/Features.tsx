@@ -1,5 +1,5 @@
-import { faHandshake, faPhone, faScroll } from "@fortawesome/free-solid-svg-icons";
-import { faEyes } from "@fortawesome/pro-solid-svg-icons";
+import { faGroupArrowsRotate, faHandshake, faPeopleGroup, faScroll } from "@fortawesome/free-solid-svg-icons";
+import { faCompass, faPhone, faEyes, faRegistered, faIdCard, faIdCardAlt } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InboxIcon, SparklesIcon } from "@heroicons/react/outline";
 import { useAuth } from "../../context/AuthContext";
@@ -8,22 +8,22 @@ const incentives = [
     {
         name: 'Notice the person in need',
         description: "Thee first thing to bring the change is to notice the need and talk with the person.",
-        imageSrc: faEyes,
+        imageSrc: faCompass,
     },
     {
         name: 'Register the person',
         description: 'After you log in to the system you are able to create a profile of a person that is willing to share their time and talents with others. The profile contains personal information about the person, their skills and goals',
-        imageSrc: faScroll,
+        imageSrc: faIdCardAlt,
     },
     {
-        name: 'Let other people contact the person',
+        name: 'Contact through network',
         description: "The created profile will be publicly available so the person thet would'd use the help will be able the people to help them or just to talk to and spend some time together.",
-        imageSrc: faPhone,
+        imageSrc: faGroupArrowsRotate,
     },
     {
         name: 'Create new relations',
         description: "When people can find each other we believe that we are capable of introducing new human relations to the society.",
-        imageSrc: faHandshake,
+        imageSrc: faPeopleGroup,
     },
 ]
 
