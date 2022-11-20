@@ -143,7 +143,11 @@ function Profile({data} : any) {
                                     </div>
                                     <div className="sm:col-span-1">
                                         <dt className="text-sm font-medium text-gray-500">Telefone</dt>
-                                        <dd className="mt-1 text-sm text-gray-900">+55 11 999 555 555</dd>
+                                        <dd className="mt-1 text-sm text-gray-900">{data.cellphone}</dd>
+                                    </div>
+                                    <div className="sm:col-span-1">
+                                        <dt className="text-sm font-medium text-gray-500">Location</dt>
+                                        <dd className="mt-1 text-sm text-gray-900">{data.location}</dd>
                                     </div>
                                    
                                 </dl>
