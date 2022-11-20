@@ -159,9 +159,9 @@ function Navbar({page}: {page: string}) {
                                                 <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-white">
                                                     <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-4 lg:px-8 lg:py-12 xl:py-16">
                                                         {solutions.map((item) => (
+                                                            <Link key={item.name} href={item.href}>
                                                             <a
-                                                                key={item.name}
-                                                                href={item.href}
+                                                                
                                                                 className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-50"
                                                             >
                                                                 <div className="flex md:h-full lg:flex-col">
@@ -181,6 +181,7 @@ function Navbar({page}: {page: string}) {
                                                                     </div>
                                                                 </div>
                                                             </a>
+                                                            </Link>
                                                         ))}
                                                     </div>
                                                 </Popover.Panel>
