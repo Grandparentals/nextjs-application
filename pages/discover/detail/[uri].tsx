@@ -9,7 +9,7 @@ const Page = (props: any) => {
   return (
     <Layout page='profile'>    
       <Head>
-        <title>The Devs Space</title>
+        <title>Personal information</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg-white">
