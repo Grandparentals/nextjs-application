@@ -36,7 +36,7 @@ function Features() {
                                     <p className="text-base text-gray-500">
                                         &ldquo;I wish that my grandpa have some goal in his life. 
                                         After the grandkids grow up and didn't have so many time to spend with him his life slowed up a lot.
-                                        This caused lonliness and even the problems with mobility. Now famili visits are almost the only joy for him and we wish for him to be active in social life again.
+                                        This caused lonliness and even the problems with mobility. Now family visits are almost the only joy for him and we wish for him to be active in social life again.
                                         &rdquo;
                                     </p>
                                 </div>
