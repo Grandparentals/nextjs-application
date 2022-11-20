@@ -7,17 +7,17 @@ import { useAuth } from "../../context/AuthContext";
 const incentives = [
     {
         name: 'Notice the person in need',
-        description: "Thee first thing to bring the change is to notice the need and talk with the person.",
+        description: "The first thing to bring the change is to notice the need and talk with the person.",
         imageSrc: faCompass,
     },
     {
         name: 'Register the person',
-        description: 'After you log in to the system you are able to create a profile of a person that is willing to share their time and talents with others. The profile contains personal information about the person, their skills and goals',
+        description: 'After you log in to the system, you are able to create a profile of a person who is willing to share their time and talents with others. The profile contains personal information about the person, their skills, and goals.',
         imageSrc: faIdCardAlt,
     },
     {
-        name: 'Contact through network',
-        description: "The created profile will be publicly available so the person thet would'd use the help will be able the people to help them or just to talk to and spend some time together.",
+        name: 'Let other people contact the person',
+        description: "The created profile will be publicly available, so the person who would use the help will be able to find people to help them or just to talk to and spend some time together.",
         imageSrc: faGroupArrowsRotate,
     },
     {
@@ -58,11 +58,11 @@ function Features() {
                             <div className="mt-6">
                                 <h2 className="text-3xl font-bold tracking-tight text-gray-900">The second start</h2>
                                 <p className="mt-4 text-lg text-gray-500">
-                                    Have you ever thought of the potential we waste just by accepting the retirement as the time in life when you don't have to do anything. <br />
+                                    Have you ever thought of the potential we waste just by accepting retirement as the time in life when you don't have to do anything.<br />
                                     As long as the people stay active they are able to do much more which can improve both their mental and psychical health.<br />
-                                    Unfortunately a lot of people that are more experienced in life don't have a lot of activities in their life.<br />
-                                    Don't let it happen to all people that are close to you that have so much to offer to the society! <br />
-                                    Help them register in our platform and find new purpose in life.
+                                    Unfortunately, a lot of people who are more experienced in life don't have a lot of activities in their lives.<br />
+                                    Don't let it happen to all people that are close to you that have so much to offer to the society!<br />
+                                    Help them register on our platform and find a new purpose in life.
                                 </p>
                                 <div className="mt-6">
                                     <div className="mt-6">
@@ -70,7 +70,7 @@ function Features() {
                                             href="#"
                                             className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
                                         >
-                                            Register to the portal
+                                            Register at the portal
                                         </a>}
                                     </div>
                                 </div>
@@ -80,9 +80,8 @@ function Features() {
                             <blockquote>
                                 <div>
                                     <p className="text-base text-gray-500">
-                                        &ldquo;I wish that my grandpa have some goal in his life.
-                                        After the grandkids grow up and didn't have so many time to spend with him his life slowed up a lot.
-                                        This caused lonliness and even the problems with mobility. Now family visits are almost the only joy for him and we wish for him to be active in social life again.
+                                        &ldquo;I wish that my grandpa had some goal in his life. After the grandkids grew up and didn't have as much time to spend with him, his life slowed up a lot. This caused loneliness and even problems with mobility. Now family visits are almost the only joy for him, and we wish for him to be active in social life again."
+                                    
                                         &rdquo;
                                     </p>
                                 </div>
@@ -124,16 +123,16 @@ function Features() {
                                     Create social bonds
                                 </h2>
                                 <p className="mt-4 text-lg text-gray-500">
-                                    It is never too late to make new friendships and create new relations. <br />
-                                    We believe we are able to change the way that people are co-existing in the society by helping them to create social bond with people who live close.<br />
-                                    The number of possible types of collaboration between the people is infinite and the only thing limiting us is our own imagination. <br />
-                                    Join the platform to start a new jurney in your life.                               </p>
+                                It is never too late to make new friends and create new relationships. <br/>
+We believe we are able to change the way that people are co-existing in the society by helping them to create social bond with people who live close.<br/>
+The number of possible types of collaboration among the people is infinite, and the only thing limiting us is our own imagination.<br/>
+Join the platform to start a new journey in your life.                            </p>
                                 <div className="mt-6">
                                     {<a
                                         href="#"
                                         className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
                                     >
-                                        Register to the portal
+                                        Register at the portal
                                     </a>}
                                 </div>
                             </div>
