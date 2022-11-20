@@ -5,9 +5,6 @@ import Discover from '../../../components/shared/Discover'
 import db from '../../../lib/db';
 
 const Page = ({registers}: {registers: Array<Object>}) => {
-
-
-  
   return (
     <Layout page='discover'>    
       <Head>
@@ -23,7 +20,6 @@ const Page = ({registers}: {registers: Array<Object>}) => {
         </div>
       </div>
     </Layout> 
-
   )
 }
 
