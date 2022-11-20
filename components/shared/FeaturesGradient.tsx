@@ -1,7 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faMarkdown } from "@fortawesome/free-brands-svg-icons";
 import { faFileMedical, faHistory, faInbox, faUser } from "@fortawesome/free-solid-svg-icons";
-import { faChartCandlestick, faChartLineUp, faClockDesk, faMailbox, faPersonCane, faSave, faSportsball, faTimer, faTrash, faUserGroup } from "@fortawesome/pro-solid-svg-icons";
+import { faChartCandlestick, faChartLineUp, faClockDesk, faMailbox, faPersonCane, faSave, faSportsball, faTimer, faTrash, faUserGroup, faUserTie } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HeartIcon, InboxIcon, SparklesIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
 
@@ -14,39 +14,32 @@ interface Feature {
 const features: Array<Feature> = [
     {
         name: 'Spontaneus activieties',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: 'Regular spontaneous activities like buying groceries or walking the dog drastically decrease probabilit or heart issues',
         icon: faSportsball,
     },
     {
-        name: 'Retired people',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faPersonCane,
-    },
-    {
         name: 'Aging environment',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: 'Based on United Nations World Population Prospects 2019, till the year 2050 number of people over 65 y.o will increase by 48%. We have to reuse their potential to make world better place.',
         icon: faChartLineUp,
     }
     ,
     {
-        name: 'TODO',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faChartLineUp,
+        name: 'Proffessionals in many areas',
+        description: 'People have a lot of talents. From carpentery through fixing things to writing. Let\'s not let their skills waste!',
+        icon: faUserTie,
     }
 ]
 
 function FeaturesGradient() {
 
-  
     return (
         <div className="bg-gradient-to-r from-teal-800 to-teal-700">
             <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
-                <h2 className="text-3xl font-bold tracking-tight text-white">Acompanhamento de pacientes criado para eficiência</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-white">Zero waste mean not to waste people potential!</h2>
                 <p className="mt-4 max-w-3xl text-lg text-teal-200">
-                    Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit
-                    aliquam sit nisl euismod mattis in.
+                    
                 </p>
-                <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+                <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
                     {features.map((feature) => (
                         <div key={feature.name}>
                             <div>
@@ -63,7 +56,6 @@ function FeaturesGradient() {
                 </div>
             </div>
         </div>
-
     )
 }
 
