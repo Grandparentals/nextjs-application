@@ -16,10 +16,14 @@ function Features() {
                                 </span>
                             </div>
                             <div className="mt-6">
-                                <h2 className="text-3xl font-bold tracking-tight text-gray-900">TODO Long article</h2>
+                                <h2 className="text-3xl font-bold tracking-tight text-gray-900">The second start</h2>
                                 <p className="mt-4 text-lg text-gray-500">
-                                apien et ligula ullamcorper malesuada proin. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Odio tempor orci dapibus ultrices in iaculis nunc. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. Sagittis orci a scelerisque purus semper eget. Quis vel eros donec ac odio. Nisi est sit amet facilisis magna. Accumsan lacus vel facilisis volutpat est velit. Gravida quis blandit turpis cursus in. Quis hendrerit dolor magna eget est. Sit amet porttitor eget dolor morbi non arcu risus. Euismod quis viverra nibh cras pulvinar. Ultricies tristique nulla aliquet enim tortor at auctor urna nunc. Egestas integer eget aliquet nibh praesent tristique.
-                                </p>
+                                    Have you ever thought of the potential we waste just by accepting the retirement as the time in life when you don't have to do anything. <br/>
+                                    As long as the people stay active they are able to do much more which can improve both their mental and psychical health.<br/>
+                                    Unfortunately a lot of people that are more experienced in life don't have a lot of activities in their life.<br/>
+                                    Don't let it happen to all people that are close to you that have so much to offer to the society! <br/>
+                                    Help them register in our platform and find new purpose in life.
+                                    </p>
                                 <div className="mt-6">
                                     <a
                                         href="#"
