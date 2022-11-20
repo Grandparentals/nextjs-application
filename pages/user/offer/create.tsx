@@ -57,7 +57,8 @@ const Offer = () => {
         const { about, type, location, department, fullName, professionalSkills, cellphone, phone, skills, openSkills } = content as any;
 
         const parsedOpenSkills = [] as Array<string>
-        openSkills.split(',').map((c: string) => parsedOpenSkills.push(dashify(c)))
+        if (openSkills && openSkills.indexOf(',') > -1)
+            openSkills.split(',').map((c: string) => parsedOpenSkills.push(dashify(c)));
 
         const payload = {
             slug: `${dashify(fullName)}-${author.uid}`,
@@ -82,6 +83,8 @@ const Offer = () => {
          payload, {
             headers: headers
         });
+        setShow(true)
+        // console.log(response)
     }
 
     const skills = [
