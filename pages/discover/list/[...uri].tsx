@@ -1,10 +1,10 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import Layout from '../../components/layout'
-import Discover from '../../components/shared/Discover'
+import Layout from '../../../components/layout'
+import Discover from '../../../components/shared/Discover'
+import db from '../../../lib/db';
 
-const Home: NextPage = () => {
-  
+const Page = (props: any) => {
+  console.log(props)
   return (
     <Layout page='discover'>    
       <Head>
@@ -24,4 +24,15 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export const getServerSideProps = async (context: any) => {
+  const { uri } = context.params;
+  const res = await db.collection("offers").where("location", "==", uri[0]).get()
+  const entry = res.docs.map(entry => entry.data());
+  return {
+    props: {
+      uri
+    }
+  }
+}
+
+export default Page

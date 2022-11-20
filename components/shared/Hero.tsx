@@ -1,6 +1,7 @@
 import { faSearch } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import dashify from "dashify";
+import router from "next/router";
 import { useState } from "react";
 
 function Hero() {
@@ -17,7 +18,8 @@ function Hero() {
     }
 
     const onSubmit = () => {
-        console.log(content)
+        const { location, skill } = content as any
+        router.push(`/discovery/list/${dashify(location)}/${dashify(skill)}`)
     }
   
     return (
