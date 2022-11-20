@@ -90,10 +90,9 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-function Profile(data : any) {
+function Profile({data} : any) {
 
-    
-
+    let createdDate = new Date(data.created);
     return (
         <div>
             <div className="mx-auto md:flex md:items-center md:justify-between">
@@ -101,7 +100,7 @@ function Profile(data : any) {
                     <div className="flex-shrink-0">
                         <div className="relative">
                                 <Image
-                            src={data.data.imgUrl}
+                            src={data.imgUrl}
                             alt="Picture of the author"
                             width={150}
                             height={150}
@@ -113,11 +112,8 @@ function Profile(data : any) {
                     <div>
                         <h1 className="text-2xl font-bold text-gray-900">{data.fullName}</h1>
                         <p className="text-sm font-medium text-gray-500">
-                            Qualificada em{' '}
-                            <a href="#" className="text-gray-900">
-                                Clínico Geral
-                            </a>{' '}
-                            em <time dateTime="2020-08-25">Agosto 25, 2020</time>
+                            Joined on{' '}                        
+                            <time>{createdDate.getMonth() + '.' + createdDate.getFullYear()} </time>
                         </p>
                     </div>
                 </div>
@@ -131,28 +127,12 @@ function Profile(data : any) {
                         <div className="bg-white shadow sm:rounded-lg">
                             <div className="px-12 py-5">
                                 <h2 id="applicant-information-title" className="text-lg font-medium leading-6 text-gray-900">
-                                    Informações do Médico
+                                    Personal information
                                 </h2>
-                                <p className="mt-1 max-w-2xl text-sm text-gray-500">Dados pessoais e profissionais.</p>
                             </div>
                             <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
                                 <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-                                    <div className="sm:col-span-1">
-                                        <dt className="text-sm font-medium text-gray-500">Application for</dt>
-                                        <dd className="mt-1 text-sm text-gray-900">Clínico Geral</dd>
-                                    </div>
-                                    <div className="sm:col-span-1">
-                                        <dt className="text-sm font-medium text-gray-500">Email address</dt>
-                                        <dd className="mt-1 text-sm text-gray-900">kirsten@example.com</dd>
-                                    </div>
-                                    <div className="sm:col-span-1">
-                                        <dt className="text-sm font-medium text-gray-500">Anos de Atuação</dt>
-                                        <dd className="mt-1 text-sm text-gray-900">5</dd>
-                                    </div>
-                                    <div className="sm:col-span-1">
-                                        <dt className="text-sm font-medium text-gray-500">Telefone</dt>
-                                        <dd className="mt-1 text-sm text-gray-900">+55 11 999 555 555</dd>
-                                    </div>
+                                    
                                     <div className="sm:col-span-2">
                                         <dt className="text-sm font-medium text-gray-500">About</dt>
                                         <dd className="mt-1 text-sm text-gray-900">
@@ -161,29 +141,11 @@ function Profile(data : any) {
                                             proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
                                         </dd>
                                     </div>
-                                    <div className="sm:col-span-2">
-                                        <dt className="text-sm font-medium text-gray-500">Attachments</dt>
-                                        <dd className="mt-1 text-sm text-gray-900">
-                                            <ul role="list" className="divide-y divide-gray-200 rounded-md border border-gray-200">
-                                                {attachments.map((attachment) => (
-                                                    <li
-                                                        key={attachment.name}
-                                                        className="flex items-center justify-between py-3 pl-3 pr-4 text-sm"
-                                                    >
-                                                        <div className="flex w-0 flex-1 items-center">
-                                                            <PaperClipIcon className="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                                                            <span className="ml-2 w-0 flex-1 truncate">{attachment.name}</span>
-                                                        </div>
-                                                        <div className="ml-4 flex-shrink-0">
-                                                            <a href={attachment.href} className="font-medium text-teal-600 hover:text-teal-500">
-                                                                Download
-                                                            </a>
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </dd>
+                                    <div className="sm:col-span-1">
+                                        <dt className="text-sm font-medium text-gray-500">Telefone</dt>
+                                        <dd className="mt-1 text-sm text-gray-900">+55 11 999 555 555</dd>
                                     </div>
+                                   
                                 </dl>
                             </div>
                             
