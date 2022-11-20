@@ -30,7 +30,7 @@ import Link from 'next/link'
 import { faClose, faHeadSideHeart, faPotFood} from '@fortawesome/pro-solid-svg-icons';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
-import { faBook, faChild, faComment } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
 
 
 const solutions = [
@@ -53,10 +53,10 @@ const solutions = [
         icon: faBook 
     },
     {
-        name: 'Kids care',
-        description: 'Find people that can help you take care of your kids. ',
-        href: '/discover/kids',
-        icon: faChild,
+        name: 'Animals care',
+        description: 'Find people that can help you take care of your animals when you are planning to go on the vaccation or will walk your dog when you are not able to.',
+        href: '/discover/animals',
+        icon: faDog,
     },
 ]
 const callsToAction = [

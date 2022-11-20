@@ -1,7 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faMarkdown } from "@fortawesome/free-brands-svg-icons";
 import { faFileMedical, faHistory, faInbox, faUser } from "@fortawesome/free-solid-svg-icons";
-import { faChartCandlestick, faClockDesk, faMailbox, faSave, faTimer, faTrash, faUserGroup } from "@fortawesome/pro-solid-svg-icons";
+import { faChartCandlestick, faChartLineUp, faClockDesk, faMailbox, faPersonCane, faSave, faSportsball, faTimer, faTrash, faUserGroup } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HeartIcon, InboxIcon, SparklesIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
 
@@ -13,45 +13,26 @@ interface Feature {
 
 const features: Array<Feature> = [
     {
-        name: 'Caixas categorizadas',
+        name: 'Spontaneus activieties',
         description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faInbox,
+        icon: faSportsball,
     },
     {
-        name: 'Detalhes do Paciente',
+        name: 'Retired people',
         description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faUser,
+        icon: faPersonCane,
     },
     {
-        name: 'Exames Passados',
+        name: 'Aging environment',
         description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faHistory,
-    },
+        icon: faChartLineUp,
+    }
+    ,
     {
-        name: 'Configuração de Lembrete',
+        name: 'TODO',
         description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faClockDesk,
-    },
-    {
-        name: 'Reports de Exames',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faChartCandlestick,
-    },
-    {
-        name: 'Resultados Salvos',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faSave,
-    },
-    {
-        name: 'Prescrição',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faFileMedical,
-    },
-    {
-        name: 'Acompanhamento de Clínicas',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: faUserGroup,
-    },
+        icon: faChartLineUp,
+    }
 ]
 
 function FeaturesGradient() {
