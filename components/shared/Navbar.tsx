@@ -123,7 +123,7 @@ function Navbar({page}: {page: string}) {
                                     </Link>
                                 } 
 
-                                <Link href={'/discover/list'}>
+                                <Link href={'/discover/list/all'}>
                                     <a className={
                                         `
                                         text-base
