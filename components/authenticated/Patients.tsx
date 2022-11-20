@@ -28,9 +28,9 @@ function Patients() {
         <div className="px-2">
             <div className="sm:flex sm:items-center">
                 <div className="sm:flex-auto">
-                    <h1 className="text-xl font-semibold text-gray-900">Pacientes</h1>
+                    <h1 className="text-xl font-semibold text-gray-900">People</h1>
                     <p className="mt-2 text-sm text-gray-700">
-                        Lista completa de todos os pacientes que o médico atende.
+                        The list of people you helped to connect
                     </p>
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
