@@ -1,5 +1,5 @@
 import { CheckIcon, PaperClipIcon, QuestionMarkCircleIcon, ThumbUpIcon, UserIcon } from "@heroicons/react/outline";
-
+import Image from 'next/image'
 
 const user = {
     name: 'Whitney Francis',
@@ -90,28 +90,28 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-function Profile() {
+function Profile(data : any) {
 
-  
+    
+
     return (
         <div>
-            
-
-            {/* Page header */}
             <div className="mx-auto md:flex md:items-center md:justify-between">
                 <div className="flex items-center space-x-5">
                     <div className="flex-shrink-0">
                         <div className="relative">
-                            <img
-                                className="h-16 w-16 rounded-full"
-                                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt=""
+                                <Image
+                            src={data.data.imgUrl}
+                            alt="Picture of the author"
+                            width={150}
+                            height={150}
+                            className ="h-16 w-16 rounded-full"
                             />
-                            <span className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true" />
+                        <span className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true" />
                         </div>
                     </div>
                     <div>
-                        <h1 className="text-2xl font-bold text-gray-900">Kristen Ramos</h1>
+                        <h1 className="text-2xl font-bold text-gray-900">{data.fullName}</h1>
                         <p className="text-sm font-medium text-gray-500">
                             Qualificada em{' '}
                             <a href="#" className="text-gray-900">

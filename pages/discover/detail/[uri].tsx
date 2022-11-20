@@ -1,29 +1,9 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 import Layout from '../../../components/layout'
 import Profile from '../../../components/shared/Profile'
+import db from '../../../lib/db'
 
-const Home: NextPage = () => {
-
-  const router = useRouter()
-
-  useEffect(() => {
-    const axiosRequest = async () => {
-      const { uri } = router.query;
-      console.log(uri)
-      // if (id) {
-      //   const res = await axios.get(`/api/offer/${id}`);
-      //   const { title, body } = res.data;
-      //   setContent({
-      //     title,
-      //     body
-      //   })
-      // }
-    }
-    axiosRequest()
-  }, [router])
+const Page = (props: any) => {
 
   return (
     <Layout page='profile'>    
@@ -36,7 +16,7 @@ const Home: NextPage = () => {
             <h1 className="text-4xl font-semibold text-teal-500 mb-6">
                 Personal information
             </h1>
-            <Profile></Profile>
+            <Profile data={props.entry}></Profile>
         </div>
       </div>
     </Layout> 
@@ -44,4 +24,16 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export const getServerSideProps = async (context: any) => {
+  const { uri } = context.params;
+  const res = await db.collection("offers").where("slug", "==", uri).get()
+  const entry = res.docs.map(entry => entry.data())[0];
+  console.log(entry)
+  return {
+    props: {
+      entry
+    }
+  }
+}
+
+export default Page
