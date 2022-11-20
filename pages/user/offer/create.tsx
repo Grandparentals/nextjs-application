@@ -64,7 +64,7 @@ const Offer = () => {
             about,
             imgUrl,
             type,
-            location,
+            location: dashify(location),
             department,
             fullName,
             professionalSkills,

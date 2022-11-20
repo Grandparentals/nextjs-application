@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useEffect } from 'react';
 import Layout from '../../../components/layout'
 import Discover from '../../../components/shared/Discover'
 import db from '../../../lib/db';
@@ -25,6 +24,7 @@ const Page = ({registers}: {registers: Array<Object>}) => {
 
 export const getServerSideProps = async (context: any) => {
   const { uri } = context.params;
+  
   let res;
 
   if(uri[0] == 'all')
@@ -34,6 +34,8 @@ export const getServerSideProps = async (context: any) => {
       uri[1]).get();
   else 
     res = await db.collection("offers").where("location", "==", uri[0]).get();
+
+  console.log(res.docs)
 
   const registers = res.docs.map(entry => entry.data());
   return {

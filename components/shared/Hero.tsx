@@ -6,6 +6,12 @@ import { useState } from "react";
 
 function Hero() {
 
+   const skills = [
+        { title: "Lets talk", value: "lets-talk" },
+        { title: "Lets eat together", value: "lets-eat-together" },
+        { title: "Help with studies and homework", value: "help-with-studies-and-homework" },
+        { title: "Animals care", value: "animals-care" },
+   ]
 
     const [content, setContent] = useState({
         skill: undefined,
@@ -19,7 +25,7 @@ function Hero() {
 
     const onSubmit = () => {
         const { location, skill } = content as any
-        router.push(`/discover/list/${dashify(location)}/${dashify(skill)}`)
+        router.push(`/discover/list/${dashify(location)}${skill ? `/${dashify(skill)}` : ''}`)
     }
   
     return (
@@ -43,7 +49,7 @@ function Hero() {
                         <p className="mx-auto my-6 max-w-lg text-center text-xl text-teal-200 sm:max-w-3xl">
                             Help the people by letting them help you
                         </p>
-                        <div className="mx-auto flex max-w-lg align-middle items-center space-x-3 pl-0 pr-16">
+                        <div className="mx-auto flex max-w-lg align-middle items-center space-x-3">
                             <input
                                 type="text"
                                 name="location"
@@ -61,9 +67,11 @@ function Hero() {
                                 onChange={onChange}
                             >
                                 <option>Select...</option>
-                                <option value={'child-care'}>Child care</option>
-                                <option value={'cooking'}>Cooking</option>
-                                <option value={'making-relations'}>Making relations</option>
+                                {skills.map(e => {
+                                    return (
+                                        <option value={e.value}>{e.title}</option>
+                                    )
+                                })}
                             </select>
                             
                             <button
@@ -71,8 +79,7 @@ function Hero() {
                                 type="button"
                                 className="inline-flex items-center rounded-md border border-transparent bg-teal-600 px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                             >
-                                Search
-                                <FontAwesomeIcon icon={faSearch} className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+                                <FontAwesomeIcon icon={faSearch} className="mx-2 h-6 w-6" aria-hidden="true" />
                             </button>
                             
                         </div>

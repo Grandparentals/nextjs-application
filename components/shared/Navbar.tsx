@@ -5,29 +5,14 @@ import { faConnectdevelop, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { useAuth } from '../../context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    BookmarkAltIcon,
-    BriefcaseIcon,
-    ChartBarIcon,
-    CheckCircleIcon,
-    ClockIcon,
-    CursorClickIcon,
-    DesktopComputerIcon,
-    GlobeAltIcon,
-    InformationCircleIcon,
     MenuIcon,
-    NewspaperIcon,
-    OfficeBuildingIcon,
     PhoneIcon,
     PlayIcon,
-    ShieldCheckIcon,
-    UserGroupIcon,
-    ViewGridIcon,
-    ChatIcon,
     XIcon,
 } from '@heroicons/react/outline'
-import { ChevronDownIcon, PaperAirplaneIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import { faClose, faHeadSideHeart, faPotFood} from '@fortawesome/pro-solid-svg-icons';
+import { faClose, faDashboard, faHeadSideHeart, faPeople, faPotFood} from '@fortawesome/pro-solid-svg-icons';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
@@ -58,10 +43,6 @@ const solutions = [
         href: '/discover/animals',
         icon: faDog,
     },
-]
-const callsToAction = [
-    { name: 'Watch Demo', href: '#', icon: PlayIcon },
-    { name: 'Contact Sales', href: '+55333333333', icon: PhoneIcon },
 ]
 
 function classNames(...classes: any) {
@@ -269,16 +250,9 @@ function Navbar({page}: {page: string}) {
                         focus
                         className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
                     >
-                        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white">
                             <div className="pt-5 pb-6 px-5 sm:pb-8">
                                 <div className="flex items-center justify-between">
-                                    <div>
-                                        <img
-                                            className="h-8 w-auto"
-                                            src="https://tailwindui.com/img/logos/workflow-mark-teal-600.svg"
-                                            alt="Workflow"
-                                        />
-                                    </div>
                                     <div className="-mr-2">
                                         <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500">
                                             <span className="sr-only">Close menu</span>
@@ -301,31 +275,34 @@ function Navbar({page}: {page: string}) {
                                                     <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
                                                 </a>
                                             ))}
+                                           
+                                            <Link href={'/discover/list/all'}>
+                                                <a className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
+                                                        <FontAwesomeIcon icon={faPeople} className="h-6 w-6" aria-hidden="true" />
+                                                    </div>
+                                                    <div className="ml-4 text-base font-medium text-gray-900">Discover people</div>
+                                                </a>
+                                            </Link>
+                                            {!loading && isLogged &&
+                                                <Link href={'/user'}>
+                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
+                                                        <FontAwesomeIcon icon={faDashboard} className="h-6 w-6" aria-hidden="true" />
+                                                    </div>
+                                                    <div className="ml-4 text-base font-medium text-gray-900">Dashboard</div>
+                                                </Link>
+                                            } 
                                         </div>
                                     </nav>
                                 </div>
                             </div>
-                            <div className="py-6 px-5">
-                                <div className="grid grid-cols-1 gap-4">
-                                    {!loading && isLogged &&
-                                        <Link href={'/user'}>
-                                            <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                                TODO
-                                            </a>
-                                        </Link>
-                                    } 
-                                    <Link href={'/discover/list'}>
-                                        <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                                            TODO
-                                        </a>
-                                    </Link>
-                                </div>
+                            <div>
                                 <div className="mt-6">
                                     <a
                                         href="#"
-                                        className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700"
+                                        className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700 "
                                     >
-                                        <FontAwesomeIcon icon={faGoogle} />
+                                        <FontAwesomeIcon icon={faGoogle} className={"w-3 lg:w-auto mr-6"}/>
                                         Sign up
                                     </a>
                                 </div>
