@@ -188,6 +188,7 @@ function getCommentSection(data: any) {
 
 function Profile({ data }: any) {
 
+    console.log(data)
     let createdDate = new Date(data.created);
     return (
         <div>
@@ -245,16 +246,16 @@ function Profile({ data }: any) {
                                         <dt className="text-sm font-medium text-gray-500">Location</dt>
                                         <dd className="mt-1 text-sm text-gray-900">{data.location}</dd>
                                     </div>
+                                    <div>
                                     {
-                                        data.skills.array.forEach((element: any) => {
+                                        data.skills.map((element: any) => {
                                             return (
-                                                <div className="sm:col-span-2">
                                                 <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800">
                                                     {element}
                                                 </span>
-                                            </div>)
-                                        })
+                                        )})
                                     }
+                                    </div>
                                     
                                     
                                 </dl>
