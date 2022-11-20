@@ -14,12 +14,12 @@ interface Feature {
 const features: Array<Feature> = [
     {
         name: 'Spontaneus activieties',
-        description: 'Regular spontaneous activities like buying groceries or walking the dog drastically decrease probabilit or heart issues',
+        description: 'Regular spontaneous activities like buying groceries or walking the dog drastically decrease the probability of heart issues.',
         icon: faSportsball,
     },
     {
         name: 'Aging environment',
-        description: 'Based on United Nations World Population Prospects 2019, till the year 2050 number of people over 65 y.o will increase by 48%. We have to reuse their potential to make world better place.',
+        description: 'Based on the 2019 United Nations World Population Prospects 2019, until the year 2050 number of people over 65 will increase by 48%. We have to reuse their potential to make the world a better place.',
         icon: faChartLineUp,
     }
     ,
