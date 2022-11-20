@@ -1,8 +1,10 @@
 import { InboxIcon, SparklesIcon } from "@heroicons/react/outline";
+import { useAuth } from "../../context/AuthContext";
 
 function Features() {
+    const { login, logout } = useAuth();
 
-  
+
     return (
         <div className="relative overflow-hidden pt-16 pb-32">
             <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />
@@ -10,23 +12,25 @@ function Features() {
                 <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
                     <div className="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
                         <div>
-                           
+
                             <div className="mt-6">
                                 <h2 className="text-3xl font-bold tracking-tight text-gray-900">The second start</h2>
                                 <p className="mt-4 text-lg text-gray-500">
-                                    Have you ever thought of the potential we waste just by accepting the retirement as the time in life when you don't have to do anything. <br/>
-                                    As long as the people stay active they are able to do much more which can improve both their mental and psychical health.<br/>
-                                    Unfortunately a lot of people that are more experienced in life don't have a lot of activities in their life.<br/>
-                                    Don't let it happen to all people that are close to you that have so much to offer to the society! <br/>
+                                    Have you ever thought of the potential we waste just by accepting the retirement as the time in life when you don't have to do anything. <br />
+                                    As long as the people stay active they are able to do much more which can improve both their mental and psychical health.<br />
+                                    Unfortunately a lot of people that are more experienced in life don't have a lot of activities in their life.<br />
+                                    Don't let it happen to all people that are close to you that have so much to offer to the society! <br />
                                     Help them register in our platform and find new purpose in life.
-                                    </p>
+                                </p>
                                 <div className="mt-6">
-                                    <a
-                                        href="#"
-                                        className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
-                                    >
-                                        Acessar plataforma
-                                    </a>
+                                <div className="mt-6">
+                            {<a
+                                href="#"
+                                className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
+                            >
+                                Register to the portal
+                            </a>}
+                        </div>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +38,7 @@ function Features() {
                             <blockquote>
                                 <div>
                                     <p className="text-base text-gray-500">
-                                        &ldquo;I wish that my grandpa have some goal in his life. 
+                                        &ldquo;I wish that my grandpa have some goal in his life.
                                         After the grandkids grow up and didn't have so many time to spend with him his life slowed up a lot.
                                         This caused lonliness and even the problems with mobility. Now family visits are almost the only joy for him and we wish for him to be active in social life again.
                                         &rdquo;
@@ -72,23 +76,23 @@ function Features() {
                 <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
                     <div className="mx-auto max-w-xl px-4 sm:px-6 lg:col-start-2 lg:mx-0 lg:max-w-none lg:py-32 lg:px-0">
                         <div>
-                            
+
                             <div className="mt-6">
                                 <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-                                   Create social bonds
+                                    Create social bonds
                                 </h2>
                                 <p className="mt-4 text-lg text-gray-500">
-                                    It is never too late to make new friendships and create new relations. <br/>
-                                    We believe we are able to change the way that people are co-existing in the society by helping them to create social bond with people who live close.<br/>
-                                    The number of possible types of collaboration between the people is infinite and the only thing limiting us is our own imagination. <br/>
+                                    It is never too late to make new friendships and create new relations. <br />
+                                    We believe we are able to change the way that people are co-existing in the society by helping them to create social bond with people who live close.<br />
+                                    The number of possible types of collaboration between the people is infinite and the only thing limiting us is our own imagination. <br />
                                     Join the platform to start a new jurney in your life.                               </p>
                                 <div className="mt-6">
-                                    <a
+                                    {<a
                                         href="#"
                                         className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
                                     >
-                                       Acessar plataforma
-                                    </a>
+                                        Register to the portal
+                                    </a>}
                                 </div>
                             </div>
                         </div>

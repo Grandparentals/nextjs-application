@@ -19,7 +19,6 @@ const Home: NextPage = () => {
       <Features></Features>
       <FeaturesGradient></FeaturesGradient>
       <Stats></Stats>
-      <Cta></Cta>
     </Layout> 
   )
 }
