@@ -14,7 +14,7 @@ const Page = (props: any) => {
       </Head>
       <div className="bg-white">
         <div className="mx-auto max-w-4xl py-2 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:items-center lg:justify-between lg:px-8 lg:py-6">
-            <h1 className="text-4xl font-semibold text-teal-500 mb-6">
+            <h1 className="text-4xl font-semibold text-pelorous-500 mb-6">
                 Personal information
             </h1>
             <Profile data={props.entry}></Profile>

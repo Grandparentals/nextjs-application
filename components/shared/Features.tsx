@@ -40,8 +40,8 @@ function Features() {
                                 <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
                                     {incentives.map((incentive) => (
                                         <div key={incentive.name}>
-                                            <FontAwesomeIcon icon={incentive.imageSrc} className="h-16 w-16 text-teal-500 mx-auto"  aria-hidden="true" />
-                                            <h3 className="mt-6 text-xl font-bold tracking-tight text-teal-600">{incentive.name}</h3>
+                                            <FontAwesomeIcon icon={incentive.imageSrc} className="h-16 w-16 text-pelorous-500 mx-auto"  aria-hidden="true" />
+                                            <h3 className="mt-6 text-xl font-bold tracking-tight text-pelorous-600">{incentive.name}</h3>
                                             <p className="mt-2 text-lg text-gray-500">{incentive.description}</p>
                                         </div>
                                     ))}
@@ -68,7 +68,7 @@ function Features() {
                                     <div className="mt-6">
                                         {<a
                                             href="#"
-                                            className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
+                                            className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-pelorous-600 to-pelorous-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pelorous-700 hover:to-pelorous-700"
                                         >
                                             Register at the portal
                                         </a>}
@@ -130,7 +130,7 @@ Join the platform to start a new journey in your life.                          
                                 <div className="mt-6">
                                     {<a
                                         href="#"
-                                        className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-600 to-teal-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-teal-700"
+                                        className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-pelorous-600 to-pelorous-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-pelorous-700 hover:to-pelorous-700"
                                     >
                                         Register at the portal
                                     </a>}

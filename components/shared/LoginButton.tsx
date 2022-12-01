@@ -37,9 +37,9 @@ function LogginButton() {
                 border border-transparent lg:rounded-md 
                 shadow-sm 
                 text-base font-mediumtext-white
-                ${!loading && isLogged ? "bg-red-600 hover:bg-red-700" : "bg-teal-600 hover:bg-teal-700"} `}>
+                ${!loading && isLogged ? "bg-red-600 hover:bg-red-700" : "bg-pelorous-500 hover:bg-pelorous-300"} `}>
 
-            <span className={`inline-flex items-center justify-center group-hover:text-yellow-400 group-hover:animate-pulse text-white`} >
+            <span className={`inline-flex items-center justify-center group-hover:text-yellow-200 group-hover:animate-pulse text-white`} >
                 <FontAwesomeIcon icon={!loading && isLogged ? faClose : faGoogle} className="w-4 h-4 mr-2" />
                 {!loading && isLogged ? t('loging.logout') : t('login.google')}
             </span>

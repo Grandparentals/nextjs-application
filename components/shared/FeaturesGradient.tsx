@@ -33,10 +33,10 @@ const features: Array<Feature> = [
 function FeaturesGradient() {
 
     return (
-        <div className="bg-gradient-to-r from-teal-800 to-teal-700">
+        <div className="bg-gradient-to-r from-pelorous-800 to-pelorous-700">
             <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24">
                 <h2 className="text-3xl font-bold tracking-tight text-white">Zero waste mean not to waste people potential!</h2>
-                <p className="mt-4 max-w-3xl text-lg text-teal-200">
+                <p className="mt-4 max-w-3xl text-lg text-pelorous-200">
                     
                 </p>
                 <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
@@ -49,7 +49,7 @@ function FeaturesGradient() {
                             </div>
                             <div className="mt-6">
                                 <h3 className="text-lg font-medium text-white">{feature.name}</h3>
-                                <p className="mt-2 text-base text-teal-200">{feature.description}</p>
+                                <p className="mt-2 text-base text-pelorous-200">{feature.description}</p>
                             </div>
                         </div>
                     ))}
