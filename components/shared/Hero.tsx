@@ -44,9 +44,9 @@ function Hero() {
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                         <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                             <span className="block text-white">Discover people potential</span>
-                            <span className="block text-teal-200">Once again</span>
+                            <span className="block text-pelorous-200">Once again</span>
                         </h1>
-                        <p className="mx-auto my-6 max-w-lg text-center text-xl text-teal-200 sm:max-w-3xl">
+                        <p className="mx-auto my-6 max-w-lg text-center text-xl text-pelorous-200 sm:max-w-3xl">
                             Help the people by letting them help you
                         </p>
                         <div className="mx-auto flex max-w-lg align-middle items-center space-x-3">
@@ -77,7 +77,7 @@ function Hero() {
                             <button
                                 onClick={onSubmit}
                                 type="button"
-                                className="inline-flex items-center rounded-md border border-transparent bg-teal-600 px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                                className="inline-flex items-center rounded-md border border-transparent bg-pelorous-600 px-2 py-2 text-sm font-medium text-white shadow-sm hover:bg-pelorous-700 focus:outline-none focus:ring-2 focus:ring-pelorous-500 focus:ring-offset-2"
                             >
                                 <FontAwesomeIcon icon={faSearch} className="mx-2 h-6 w-6" aria-hidden="true" />
                             </button>

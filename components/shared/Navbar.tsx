@@ -60,14 +60,15 @@ function Navbar({page}: {page: string}) {
                 <div className="relative z-20">
                     <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-7 md:justify-start md:space-x-10">
                         <Link href={'/'}>
-                            <a className="flex font-bold text-teal-600 text-lg group">
+                            <a className="flex font-bold text-pelorous-600 text-lg group">
                                 <span className="sr-only">{t('common.grandparentals')}</span>
-                                <FontAwesomeIcon icon={faHeadSideHeart} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" />
+                                <img src='/icons/29.png' className='mr-2'/>
+                                {/* <FontAwesomeIcon icon={faHeadSideHeart} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" /> */}
                                 {t('common.grandparentals')}
                             </a>
                         </Link>
                         <div className="-mr-2 -my-2 md:hidden">
-                            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500">
+                            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pelorous-500">
                                 <span className="sr-only">Open menu</span>
                                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
                             </Popover.Button>
@@ -78,7 +79,7 @@ function Navbar({page}: {page: string}) {
                                 {!loading && isLogged ?
                                     <Link href={'/user'}>
                                         <a className={`px-3 text-base font-medium
-                                            ${page == 'user' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}`}>
+                                            ${page == 'user' ? "text-pelorous-500 hover:text-pelorous-900" : "text-gray-500 hover:text-gray-900"}`}>
                                             {t('navBar.dashboard')}
                                         </a>
                                     </Link> : <></>
@@ -86,7 +87,7 @@ function Navbar({page}: {page: string}) {
 
                                 <Link href={'/discover/list/all'}>
                                     <a className={` px-3 text-base font-medium
-                                        ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}`}>
+                                        ${page == 'professionals' ? "text-pelorous-500 hover:text-pelorous-900" : "text-gray-500 hover:text-gray-900"}`}>
                                         {t('navBar.discoverPeople')}
                                     </a>
                                 </Link>
@@ -97,7 +98,7 @@ function Navbar({page}: {page: string}) {
                                             <Popover.Button
                                                 className={classNames(
                                                     open ? 'text-gray-900' : 'text-gray-500',
-                                                    'px-3 group bg-white rounded-md inline-flex items-center text-base font-medium border-2 border-transparent hover:text-gray-900 focus:text-white focus:bg-teal-600 focus:outline-none focus:border-teal-600 focus:rounded-md'
+                                                    'px-3 group bg-white rounded-md inline-flex items-center text-base font-medium border-2 border-transparent hover:text-gray-900 focus:text-white focus:bg-pelorous-600 focus:outline-none focus:border-pelorous-600 focus:rounded-md'
                                                 )}
                                             >
                                                 <span>{t('navBar.typesOfHelp')}</span>
@@ -129,7 +130,7 @@ function Navbar({page}: {page: string}) {
                                                             >
                                                                 <div className="flex md:h-full lg:flex-col">
                                                                     <div className="flex-shrink-0">
-                                                                        <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
+                                                                        <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
                                                                             <FontAwesomeIcon icon={item.icon} className="h-6 w-6" aria-hidden="true" />
                                                                         </span>
                                                                     </div>
@@ -138,7 +139,7 @@ function Navbar({page}: {page: string}) {
                                                                             <p className="text-base font-medium text-gray-900">{item.name}</p>
                                                                             <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                                                                         </div>
-                                                                        <p className="mt-2 text-sm font-medium text-teal-600 lg:mt-4">
+                                                                        <p className="mt-2 text-sm font-medium text-pelorous-600 lg:mt-4">
                                                                                 {t('navBar.discoverPeople')} <span aria-hidden="true">&rarr;</span>
                                                                         </p>
                                                                     </div>
@@ -177,7 +178,7 @@ function Navbar({page}: {page: string}) {
                             <div className="pt-5 pb-6 px-5 sm:pb-8">
                                 <div className="flex items-center justify-between">
                                     <div className="-mr-2">
-                                        <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500">
+                                        <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pelorous-500">
                                             <span className="sr-only">Close menu</span>
                                             <XIcon className="h-6 w-6" aria-hidden="true" />
                                         </Popover.Button>
@@ -191,7 +192,7 @@ function Navbar({page}: {page: string}) {
                                                     <a
                                                         className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50"
                                                     >
-                                                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
+                                                        <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
                                                             <FontAwesomeIcon icon={item.icon} className="h-6 w-6" aria-hidden="true" />
                                                         </div>
                                                         <div className="ml-4 text-base font-medium text-gray-900">{item.name}</div>
@@ -201,7 +202,7 @@ function Navbar({page}: {page: string}) {
                                            
                                             <Link href={'/discover/list/all'}>
                                                 <a className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
-                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
+                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
                                                         <FontAwesomeIcon icon={faPeople} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
                                                     <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.discoverPeople')}</div>
@@ -209,7 +210,7 @@ function Navbar({page}: {page: string}) {
                                             </Link>
                                             {!loading && isLogged &&
                                                 <Link href={'/user'}>
-                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
+                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
                                                         <FontAwesomeIcon icon={faDashboard} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
                                                     <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.dashboard')}</div>

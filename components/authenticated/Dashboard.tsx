@@ -36,8 +36,8 @@ function Dashboard() {
             icon: ClockIcon,
             name: 'Request time off',
             href: '#',
-            iconForeground: 'text-teal-700',
-            iconBackground: 'bg-teal-50',
+            iconForeground: 'text-pelorous-700',
+            iconBackground: 'bg-pelorous-50',
         },
         {
             icon: CheckIcon,

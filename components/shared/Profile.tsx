@@ -39,7 +39,7 @@ import Image from 'next/image'
 
 const eventTypes = {
     applied: { icon: UserIcon, bgColorClass: 'bg-gray-400' },
-    advanced: { icon: ThumbUpIcon, bgColorClass: 'bg-teal-500' },
+    advanced: { icon: ThumbUpIcon, bgColorClass: 'bg-pelorous-500' },
     completed: { icon: CheckIcon, bgColorClass: 'bg-green-500' },
 }
 
@@ -154,7 +154,7 @@ function getCommentSection(data: any) {
                                             id="comment"
                                             name="comment"
                                             rows={3}
-                                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm"
+                                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-pelorous-500 focus:ring-pelorous-500 sm:text-sm"
                                             placeholder="Add a note"
                                             defaultValue={''}
                                         />
@@ -172,7 +172,7 @@ function getCommentSection(data: any) {
                                         </a>
                                         <button
                                             type="submit"
-                                            className="inline-flex items-center justify-center rounded-md border border-transparent bg-teal-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                                            className="inline-flex items-center justify-center rounded-md border border-transparent bg-pelorous-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-pelorous-700 focus:outline-none focus:ring-2 focus:ring-pelorous-500 focus:ring-offset-2"
                                         >
                                             Comment
                                         </button>
