@@ -16,6 +16,7 @@ import { faClose, faDashboard, faHeadSideHeart, faPeople, faPotFood} from '@fort
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
+import LogginButton from './LoginButton';
 
 
 const solutions = [
@@ -51,21 +52,11 @@ function classNames(...classes: any) {
 
 function Navbar({page}: {page: string}) {
 
-    const { login, logout } = useAuth();
-    
     const [loading, setLoading] = useState(false);
 
     const [ isLogged, setIsLogged ] = useState(false)
 
-    useEffect( () => {
-        setLoading(true)
-        onAuthStateChanged(auth, (user) => {
-            setLoading(false)
-            if (user) {
-                setIsLogged(true)
-            } 
-        });
-    }, []);
+   
     
     return (
         <header>
@@ -89,45 +80,22 @@ function Navbar({page}: {page: string}) {
                         <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
                             <Popover.Group as="nav" className="flex space-x-10 align-middle items-center">
                                 
-                                {!loading && isLogged &&
+                                {!loading && isLogged ?
                                     <Link href={'/user'}>
-                                        <a className={
-                                            `
-                                        text-base
-                                        font-medium
-                                        px-3
-                                        ${page == 'user' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}
-                                        `
-                                        }>
+                                        <a className={`px-3 text-base font-medium
+                                            ${page == 'user' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}`}>
                                             Dashboard
                                         </a>
-                                    </Link>
+                                    </Link> : <></>
                                 } 
 
                                 <Link href={'/discover/list/all'}>
-                                    <a className={
-                                        `
-                                        text-base
-                                        font-medium
-                                        px-3
-                                        ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}
-                                        `
-                                    }>
+                                    <a className={` px-3 text-base font-medium
+                                        ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}`}>
                                         Discover people
                                     </a>
                                 </Link>
-                                {/* <Link href={'/offer/list'}>
-                                    <a className={
-                                        `
-                                        text-base
-                                        font-medium
-                                        px-3
-                                        ${page == 'offers' ? "text-teal-600 hover:text-teal-900" : "text-gray-500 hover:text-gray-900" }
-                                        `
-                                    }>
-                                        Empresas
-                                    </a>
-                                </Link> */}
+
                                 <Popover>
                                     {({ open }) => (
                                         <>
@@ -191,48 +159,7 @@ function Navbar({page}: {page: string}) {
                                 </Popover>
                             </Popover.Group>
                             <div className="flex items-center md:ml-12">
-                                <button
-                                    onClick={!loading && isLogged ? logout : login}
-                                    className={`
-                                        group
-                                        ml-8
-                                        px-4
-                                        py-2
-                                        border
-                                        border-transparent
-                                        rounded-md
-                                        shadow-sm
-                                        text-base
-                                        font-medium
-                                        text-white
-                                        ${!loading && isLogged ? "bg-red-600 hover:bg-red-700" : "bg-teal-600 hover:bg-teal-700"}
-                                    `}
-                                >
-                                 
-                                {!loading && isLogged ? 
-                                    <span className='
-                                            inline-flex
-                                            items-center
-                                            justify-center'>
-                                        <FontAwesomeIcon
-                                            icon={faClose}
-                                            className="w-4 h-4 mr-2 group-hover:animate-spin" />
-                                        Logout
-                                    </span>
-                                    :
-                                        <span className="
-                                            inline-flex
-                                            items-center
-                                            justify-center 
-                                            group-hover:text-yellow-400
-                                            group-hover:animate-pulse" >
-                                        <FontAwesomeIcon
-                                            icon={faGoogle}
-                                            className="w-4 h-4 mr-2" />
-                                        Login via Google
-                                    </span>
-                                }
-                                </button>
+                                <LogginButton></LogginButton>
                             </div>
                         </div>
                     </div>
@@ -299,13 +226,7 @@ function Navbar({page}: {page: string}) {
                             </div>
                             <div>
                                 <div className="mt-6">
-                                    <a
-                                        href="#"
-                                        className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700 "
-                                    >
-                                        <FontAwesomeIcon icon={faGoogle} className={"w-3 lg:w-auto mr-6"}/>
-                                        Sign up
-                                    </a>
+                                    <LogginButton></LogginButton>
                                 </div>
                             </div>
                         </div>

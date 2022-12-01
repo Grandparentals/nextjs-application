@@ -69,7 +69,7 @@ function Hero() {
                                 <option>Select...</option>
                                 {skills.map(e => {
                                     return (
-                                        <option value={e.value}>{e.title}</option>
+                                        <option key={e.value} value={e.value}>{e.title}</option>
                                     )
                                 })}
                             </select>

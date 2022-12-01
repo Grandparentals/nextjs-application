@@ -5,7 +5,7 @@ module.exports = {
     disableStaticImages: true,
     minimumCacheTTL: 300,
     formats: ['image/webp'],
-    domains: ['firebasestorage.googleapis.com'],
+    domains: ['firebasestorage.googleapis.com', 'lh3.googleusercontent.com'],
   },
   
 }
