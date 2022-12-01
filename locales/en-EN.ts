@@ -1,7 +1,7 @@
 export default {
     translation: {
         common: {
-            remoteuOrg: 'Remoteu.org',
+            grandparentals: 'GrandpaRentals',
             save: 'Salvar',
             edit: 'Editar',
             continue: 'Continuar',
@@ -13,13 +13,14 @@ export default {
             signUp: 'Sign up'
         },
         navBar: {
-            devs: 'Devs',
-            companies: 'Empresas'
+            dashboard: 'Dashboard',
+            discoverPeople: 'Discover people',
+            typesOfHelp: 'Types of help'
         },
         login: {
             login: 'Login',
             logout: 'Logout',
-            google: 'Login com Google'
+            google: 'Login with Google'
         }
     }
 };

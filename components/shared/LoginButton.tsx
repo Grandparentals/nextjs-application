@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/pro-solid-svg-icons';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
+import { useTranslation } from 'react-i18next';
 
 function LogginButton() {
+    const { t } = useTranslation();
+
 
     const { login, logout } = useAuth();
     
@@ -38,7 +41,7 @@ function LogginButton() {
 
             <span className={`inline-flex items-center justify-center group-hover:text-yellow-400 group-hover:animate-pulse text-white`} >
                 <FontAwesomeIcon icon={!loading && isLogged ? faClose : faGoogle} className="w-4 h-4 mr-2" />
-                {!loading && isLogged ? "Logout" : "Login via Google"}
+                {!loading && isLogged ? t('loging.logout') : t('login.google')}
             </span>
         </button>
     )

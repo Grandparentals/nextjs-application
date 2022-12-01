@@ -1,23 +1,17 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useState } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import { faConnectdevelop, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { useAuth } from '../../context/AuthContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     MenuIcon,
-    PhoneIcon,
-    PlayIcon,
     XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import { faClose, faDashboard, faHeadSideHeart, faPeople, faPotFood} from '@fortawesome/pro-solid-svg-icons';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../lib/firebase';
+import {  faDashboard, faHeadSideHeart, faPeople, faPotFood} from '@fortawesome/pro-solid-svg-icons';
 import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
 import LogginButton from './LoginButton';
-
+import { useTranslation } from 'react-i18next';
 
 const solutions = [
     {
@@ -51,6 +45,7 @@ function classNames(...classes: any) {
 }
 
 function Navbar({page}: {page: string}) {
+    const { t } = useTranslation();
 
     const [loading, setLoading] = useState(false);
 
@@ -66,9 +61,9 @@ function Navbar({page}: {page: string}) {
                     <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-7 md:justify-start md:space-x-10">
                         <Link href={'/'}>
                             <a className="flex font-bold text-teal-600 text-lg group">
-                                <span className="sr-only">Medicine</span>
+                                <span className="sr-only">{t('common.grandparentals')}</span>
                                 <FontAwesomeIcon icon={faHeadSideHeart} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" />
-                                GrandpaRentals
+                                {t('common.grandparentals')}
                             </a>
                         </Link>
                         <div className="-mr-2 -my-2 md:hidden">
@@ -84,7 +79,7 @@ function Navbar({page}: {page: string}) {
                                     <Link href={'/user'}>
                                         <a className={`px-3 text-base font-medium
                                             ${page == 'user' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}`}>
-                                            Dashboard
+                                            {t('navBar.dashboard')}
                                         </a>
                                     </Link> : <></>
                                 } 
@@ -92,7 +87,7 @@ function Navbar({page}: {page: string}) {
                                 <Link href={'/discover/list/all'}>
                                     <a className={` px-3 text-base font-medium
                                         ${page == 'professionals' ? "text-teal-500 hover:text-teal-900" : "text-gray-500 hover:text-gray-900"}`}>
-                                        Discover people
+                                        {t('navBar.discoverPeople')}
                                     </a>
                                 </Link>
 
@@ -105,7 +100,7 @@ function Navbar({page}: {page: string}) {
                                                     'px-3 group bg-white rounded-md inline-flex items-center text-base font-medium border-2 border-transparent hover:text-gray-900 focus:text-white focus:bg-teal-600 focus:outline-none focus:border-teal-600 focus:rounded-md'
                                                 )}
                                             >
-                                                <span>Types of help</span>
+                                                <span>{t('navBar.typesOfHelp')}</span>
                                                 <ChevronDownIcon
                                                     className={classNames(
                                                         open ? 'text-gray-600' : 'text-gray-400',
@@ -144,7 +139,7 @@ function Navbar({page}: {page: string}) {
                                                                             <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                                                                         </div>
                                                                         <p className="mt-2 text-sm font-medium text-teal-600 lg:mt-4">
-                                                                            Discover people <span aria-hidden="true">&rarr;</span>
+                                                                                {t('navBar.discoverPeople')} <span aria-hidden="true">&rarr;</span>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -209,7 +204,7 @@ function Navbar({page}: {page: string}) {
                                                     <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
                                                         <FontAwesomeIcon icon={faPeople} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
-                                                    <div className="ml-4 text-base font-medium text-gray-900">Discover people</div>
+                                                    <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.discoverPeople')}</div>
                                                 </a>
                                             </Link>
                                             {!loading && isLogged &&
@@ -217,7 +212,7 @@ function Navbar({page}: {page: string}) {
                                                     <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-teal-500 text-white sm:h-12 sm:w-12">
                                                         <FontAwesomeIcon icon={faDashboard} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
-                                                    <div className="ml-4 text-base font-medium text-gray-900">Dashboard</div>
+                                                    <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.dashboard')}</div>
                                                 </Link>
                                             } 
                                         </div>
