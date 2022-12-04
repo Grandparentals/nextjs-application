@@ -14,6 +14,12 @@ export default {
             login: 'Login',
             logout: 'Logout',
             google: 'Login with Google'
+        },
+        page: {
+            aboutUs: {
+                title: "About Us",
+                content: "Here is the content bla bla bla"
+            }
         }
     }
 };
