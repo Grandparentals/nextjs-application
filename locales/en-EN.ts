@@ -19,6 +19,10 @@ export default {
             aboutUs: {
                 title: "About Us",
                 content: "Here is the content bla bla bla"
+            },
+            howItWorks: {
+                title: "How it Works",
+                content: "Here is the content bla bla bla"
             }
         }
     }
