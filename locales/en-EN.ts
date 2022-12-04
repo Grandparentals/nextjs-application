@@ -1,21 +1,14 @@
 export default {
     translation: {
         common: {
-            grandparentals: 'GrandpaRentals',
-            save: 'Salvar',
-            edit: 'Editar',
-            continue: 'Continuar',
-            ok: 'Ok',
-            next: 'Próximo',
-            previous: 'Anterior',
-            about: 'Sobre',
-            knowMore: 'Saiba mais',
-            signUp: 'Sign up'
+            grandparentals: 'GrandpaRentals'
         },
         navBar: {
             dashboard: 'Dashboard',
             discoverPeople: 'Discover people',
-            typesOfHelp: 'Types of help'
+            typesOfHelp: 'Types of help',
+            aboutUs: "About Us",
+            howItWorks: "How it Works"
         },
         login: {
             login: 'Login',
