@@ -6,7 +6,9 @@ export default {
         navBar: {
             dashboard: 'Dashboard',
             discoverPeople: 'Discover people',
-            typesOfHelp: 'Types of help'
+            typesOfHelp: 'Types of help',
+            aboutUs: "About Us",
+            howItWorks: "How it Works"
         },
         login: {
             login: 'Login',

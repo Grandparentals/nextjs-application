@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
-import {  faDashboard, faHeadSideHeart, faPeople, faPotFood} from '@fortawesome/pro-solid-svg-icons';
+import {  faDashboard, faHeadSideHeart, faHouseLaptop, faInfo, faPeople, faPotFood, faSquareInfo} from '@fortawesome/pro-solid-svg-icons';
 import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
 import LogginButton from './LoginButton';
 import { useTranslation } from 'react-i18next';
@@ -195,6 +195,22 @@ function Navbar({page}: {page: string}) {
                                                         <FontAwesomeIcon icon={faPeople} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
                                                     <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.discoverPeople')}</div>
+                                                </a>
+                                            </Link>
+                                            <Link href={'/about-us'}>
+                                                <a className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
+                                                        <FontAwesomeIcon icon={faInfo} className="h-6 w-6" aria-hidden="true" />
+                                                    </div>
+                                                    <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.aboutUs')}</div>
+                                                </a>
+                                            </Link>
+                                            <Link href={'/how-it-works'}>
+                                                <a className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                                    <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
+                                                        <FontAwesomeIcon icon={faHouseLaptop} className="h-6 w-6" aria-hidden="true" />
+                                                    </div>
+                                                    <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.howItWorks')}</div>
                                                 </a>
                                             </Link>
                                             {!loading && isLogged &&
