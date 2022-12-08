@@ -63,7 +63,6 @@ function Navbar({page}: {page: string}) {
                             <a className="flex font-bold text-pelorous-600 text-lg group">
                                 <span className="sr-only">{t('common.grandparentals')}</span>
                                 <img src='/icons/29.png' className='mr-2'/>
-                                {/* <FontAwesomeIcon icon={faHeadSideHeart} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" /> */}
                                 {t('common.grandparentals')}
                             </a>
                         </Link>
@@ -155,7 +154,7 @@ function Navbar({page}: {page: string}) {
                                 </Popover>
                             </Popover.Group>
                             <div className="flex items-center md:ml-12">
-                                <LogginButton></LogginButton>
+                                <LogginButton handleLoading={setLoading} handleLogged={setIsLogged}></LogginButton>
                             </div>
                         </div>
                     </div>
@@ -188,7 +187,6 @@ function Navbar({page}: {page: string}) {
                                     <nav>
                                         <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
                                            
-                                           
                                             <Link href={'/discover/list/all'}>
                                                 <a className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
                                                     <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
@@ -213,13 +211,14 @@ function Navbar({page}: {page: string}) {
                                                     <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.howItWorks')}</div>
                                                 </a>
                                             </Link>
-                                            {!loading && isLogged &&
+                                            {!loading && isLogged ?
                                                 <Link href={'/user'}>
                                                     <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
                                                         <FontAwesomeIcon icon={faDashboard} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
                                                     <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.dashboard')}</div>
                                                 </Link>
+                                                : ''
                                             } 
                                         </div>
                                     </nav>
@@ -227,7 +226,7 @@ function Navbar({page}: {page: string}) {
                             </div>
                             <div>
                                 <div className="mt-6">
-                                    <LogginButton></LogginButton>
+                                    <LogginButton handleLoading={setLoading} handleLogged={setIsLogged}></LogginButton>
                                 </div>
                             </div>
                         </div>
