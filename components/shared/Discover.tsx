@@ -20,7 +20,7 @@ function discover({ list }: { list: Array<Object> }) {
                                     <div className="flex min-w-0 flex-1 items-center">
                                         <div className="flex-shrink-0">
                                             <Image
-                                                src={application?.imgUrl}
+                                                src={application?.imgUrl || '/logo/logo-128.png'}
                                                 alt="Picture of the author"
                                                 width={64}
                                                 height={64}
