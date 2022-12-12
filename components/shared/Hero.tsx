@@ -36,7 +36,7 @@ function Hero() {
                     <div className="absolute inset-0">
                         <img
                             className="h-full w-full object-cover"
-                            src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                            src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=20"
                             alt="People working on laptops"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-300 mix-blend-multiply" />
