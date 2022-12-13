@@ -13,32 +13,7 @@ import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
 import LogginButton from './LoginButton';
 import { useTranslation } from 'react-i18next';
 
-const solutions = [
-    {
-        name: 'Lets talk',
-        description: "You just want to get a friend to meet from time to time for a chat and a coffe? There are a lot of people that are willing to have a chat with you.",
-        href: '/discover/list/none/lets-talk',
-        icon: faComment,
-    },
-    {
-        name: 'Lets eat together',
-        description: 'If you don\'t like eating alone or you need help with preparing the food, please look at the people that can help you with that.',
-        href: '/discover/list/none/lets-eat-together',
-        icon: faPotFood,
-    },
-    { 
-        name: 'Help with studies and homework', 
-        description: "If your kids needs somebody to help them with the homework you can look for people that can help them with that", 
-        href: '/discover/list/none/help-with-studies-and-homework', 
-        icon: faBook 
-    },
-    {
-        name: 'Animals care',
-        description: 'Find people that can help you take care of your animals when you are planning to go on the vaccation or will walk your dog when you are not able to.',
-        href: '/discover/list/none/animals-care',
-        icon: faDog,
-    },
-]
+
 
 function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
@@ -46,6 +21,33 @@ function classNames(...classes: any) {
 
 function Navbar({page}: {page: string}) {
     const { t } = useTranslation();
+
+    const solutions = [
+        {
+            name: t('navBar.solutions.0.name'),
+            description: t('navBar.solutions.0.description'),
+            href: '/discover/list/none/lets-talk',
+            icon: faComment,
+        },
+        {
+            name: t('navBar.solutions.1.name'),
+            description: t('navBar.solutions.1.description'),
+            href: '/discover/list/none/lets-eat-together',
+            icon: faPotFood,
+        },
+        {
+            name: t('navBar.solutions.2.name'),
+            description: t('navBar.solutions.2.description'),
+            href: '/discover/list/none/help-with-studies-and-homework',
+            icon: faBook
+        },
+        {
+            name: t('navBar.solutions.3.name'),
+            description: t('navBar.solutions.3.description'),
+            href: '/discover/list/none/animals-care',
+            icon: faDog,
+        },
+    ]
 
     const [loading, setLoading] = useState(false);
 

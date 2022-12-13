@@ -1,9 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faMarkdown } from "@fortawesome/free-brands-svg-icons";
-import { faFileMedical, faHistory, faInbox, faUser } from "@fortawesome/free-solid-svg-icons";
-import { faChartCandlestick, faChartLineUp, faClockDesk, faMailbox, faPersonCane, faSave, faSportsball, faTimer, faTrash, faUserGroup, faUserTie } from "@fortawesome/pro-solid-svg-icons";
+import { faChartLineUp, faSportsball, faUserTie } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { HeartIcon, InboxIcon, SparklesIcon, TrashIcon, UsersIcon } from "@heroicons/react/outline";
+import { useTranslation } from 'react-i18next'
 
 interface Feature {
     name: string
@@ -11,26 +9,30 @@ interface Feature {
     icon: IconProp
 }
 
-const features: Array<Feature> = [
-    {
-        name: 'Spontaneus activieties',
-        description: 'Regular spontaneous activities like buying groceries or walking the dog drastically decrease the probability of heart issues.',
-        icon: faSportsball,
-    },
-    {
-        name: 'Aging environment',
-        description: 'Based on the 2019 United Nations World Population Prospects 2019, until the year 2050 number of people over 65 will increase by 48%. We have to reuse their potential to make the world a better place.',
-        icon: faChartLineUp,
-    }
-    ,
-    {
-        name: 'Proffessionals in many areas',
-        description: 'People have a lot of talents. From carpentery through fixing things to writing. Let\'s not let their skills waste!',
-        icon: faUserTie,
-    }
-]
+
 
 function FeaturesGradient() {
+
+    const { t } = useTranslation();
+
+    const features: Array<Feature> = [
+        {
+            name: t('components.featuresGradient.icons.one.name'),
+            description: t('components.featuresGradient.icons.one.description'),
+            icon: faSportsball,
+        },
+        {
+            name: t('components.featuresGradient.icons.two.name'),
+            description: t('components.featuresGradient.icons.two.description'),
+            icon: faChartLineUp,
+        }
+        ,
+        {
+            name: t('components.featuresGradient.icons.three.name'),
+            description: t('components.featuresGradient.icons.three.description'),
+            icon: faUserTie,
+        }
+    ]
 
     return (
         <div className="bg-gradient-to-r from-pelorous-800 to-pelorous-700">

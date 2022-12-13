@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckCircleIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import Link from 'next/link';
 import Image from 'next/image'
-
+import { useTranslation } from 'react-i18next'
 
 function discover({ list }: { list: Array<Object> }) {
-    
+    const { t } = useTranslation();
+
     return (
         <div className="overflow-hidden bg-white shadow sm:rounded-md">
             <ul role="list" className="divide-y divide-gray-200">
@@ -38,7 +39,7 @@ function discover({ list }: { list: Array<Object> }) {
                                             <div className="hidden md:block">
                                                 <div>
                                                     <p className="text-sm text-gray-900">
-                                                        Applied on <time dateTime={application.date}>{application.date}</time>
+                                                            {t('page.discoverPeople.appliedOn')} <time dateTime={application.date}>{application.date}</time>
                                                     </p>
                                                     <p className="mt-2 flex items-center text-sm text-gray-500">
                                                         <CheckCircleIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-green-400" aria-hidden="true" />
