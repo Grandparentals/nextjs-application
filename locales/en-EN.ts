@@ -42,7 +42,31 @@ export default {
             howItWorks: {
                 title: "How it Works",
                 content: "Here is the content bla bla bla"
-            }
+            },
+            discoverPeople: {
+                head: {
+                    title: "Discover people - Grandparentals"
+                },
+                title: "People",
+                appliedOn: "Applied on"
+            },
+            personalInformation: {
+                head: {
+                    title: "Personal information"
+                },
+                title: "Personal information",
+                joinedOn: "Joined on",
+                personalInformation: "Personal information",
+                about: "About",
+                professionalSummary: "Professional summary",
+                telephone: "Telephone",
+                location: "Location",
+            },
+            userDashboard: {
+                title:"Profile",
+                subtitle: " Profile Overview",
+                welcome: "Welcome back, "
+            },
         },
         components: {
             features: {
@@ -97,6 +121,18 @@ export default {
                         name: 'Proffessionals in many areas',
                         description: 'People have a lot of talents. From carpentery through fixing things to writing. Let\'s not let their skills waste!'
                     }
+                }
+            },
+            grandparents: {
+                title: "People",
+                subtitle: "The list of people you helped to connect",
+                actions: {
+                    add: "Add a Person",
+                    edit: "Edit",
+                    delete: "Delete"
+                },
+                list: {
+                    title: "Name"
                 }
             }
         }
