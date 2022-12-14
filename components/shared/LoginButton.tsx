@@ -8,9 +8,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 import { useTranslation } from 'react-i18next';
 
-function LogginButton() {
+function LogginButton({ handleLoading, handleLogged }: { handleLoading: any, handleLogged: any }) {
     const { t } = useTranslation();
-
 
     const { login, logout } = useAuth();
     
@@ -20,10 +19,13 @@ function LogginButton() {
 
     useEffect( () => {
         setLoading(true)
+        handleLoading(true)
         onAuthStateChanged(auth, (user) => {
             setLoading(false)
+            handleLoading(false)
             if (user) {
                 setIsLogged(true)
+                handleLogged(true)
             } 
         });
     }, [isLogged]);
@@ -41,7 +43,7 @@ function LogginButton() {
 
             <span className={`inline-flex items-center justify-center group-hover:text-yellow-200 group-hover:animate-pulse text-white`} >
                 <FontAwesomeIcon icon={!loading && isLogged ? faClose : faGoogle} className="w-4 h-4 mr-2" />
-                {!loading && isLogged ? t('loging.logout') : t('login.google')}
+                {!loading && isLogged ? t('login.logout') : t('login.google')}
             </span>
         </button>
     )

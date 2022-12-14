@@ -13,32 +13,7 @@ import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
 import LogginButton from './LoginButton';
 import { useTranslation } from 'react-i18next';
 
-const solutions = [
-    {
-        name: 'Lets talk',
-        description: "You just want to get a friend to meet from time to time for a chat and a coffe? There are a lot of people that are willing to have a chat with you.",
-        href: '/discover/list/none/lets-talk',
-        icon: faComment,
-    },
-    {
-        name: 'Lets eat together',
-        description: 'If you don\'t like eating alone or you need help with preparing the food, please look at the people that can help you with that.',
-        href: '/discover/list/none/lets-eat-together',
-        icon: faPotFood,
-    },
-    { 
-        name: 'Help with studies and homework', 
-        description: "If your kids needs somebody to help them with the homework you can look for people that can help them with that", 
-        href: '/discover/list/none/help-with-studies-and-homework', 
-        icon: faBook 
-    },
-    {
-        name: 'Animals care',
-        description: 'Find people that can help you take care of your animals when you are planning to go on the vaccation or will walk your dog when you are not able to.',
-        href: '/discover/list/none/animals-care',
-        icon: faDog,
-    },
-]
+
 
 function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ')
@@ -46,6 +21,33 @@ function classNames(...classes: any) {
 
 function Navbar({page}: {page: string}) {
     const { t } = useTranslation();
+
+    const solutions = [
+        {
+            name: t('navBar.solutions.0.name'),
+            description: t('navBar.solutions.0.description'),
+            href: '/discover/list/none/lets-talk',
+            icon: faComment,
+        },
+        {
+            name: t('navBar.solutions.1.name'),
+            description: t('navBar.solutions.1.description'),
+            href: '/discover/list/none/lets-eat-together',
+            icon: faPotFood,
+        },
+        {
+            name: t('navBar.solutions.2.name'),
+            description: t('navBar.solutions.2.description'),
+            href: '/discover/list/none/help-with-studies-and-homework',
+            icon: faBook
+        },
+        {
+            name: t('navBar.solutions.3.name'),
+            description: t('navBar.solutions.3.description'),
+            href: '/discover/list/none/animals-care',
+            icon: faDog,
+        },
+    ]
 
     const [loading, setLoading] = useState(false);
 
@@ -63,7 +65,6 @@ function Navbar({page}: {page: string}) {
                             <a className="flex font-bold text-pelorous-600 text-lg group">
                                 <span className="sr-only">{t('common.grandparentals')}</span>
                                 <img src='/icons/29.png' className='mr-2'/>
-                                {/* <FontAwesomeIcon icon={faHeadSideHeart} className="h-7 w-7 mr-1 group-hover:animate-spin-fast" aria-hidden="true" /> */}
                                 {t('common.grandparentals')}
                             </a>
                         </Link>
@@ -155,7 +156,7 @@ function Navbar({page}: {page: string}) {
                                 </Popover>
                             </Popover.Group>
                             <div className="flex items-center md:ml-12">
-                                <LogginButton></LogginButton>
+                                <LogginButton handleLoading={setLoading} handleLogged={setIsLogged}></LogginButton>
                             </div>
                         </div>
                     </div>
@@ -188,7 +189,6 @@ function Navbar({page}: {page: string}) {
                                     <nav>
                                         <div className="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
                                            
-                                           
                                             <Link href={'/discover/list/all'}>
                                                 <a className="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
                                                     <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
@@ -213,13 +213,14 @@ function Navbar({page}: {page: string}) {
                                                     <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.howItWorks')}</div>
                                                 </a>
                                             </Link>
-                                            {!loading && isLogged &&
+                                            {!loading && isLogged ?
                                                 <Link href={'/user'}>
                                                     <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-pelorous-500 text-white sm:h-12 sm:w-12">
                                                         <FontAwesomeIcon icon={faDashboard} className="h-6 w-6" aria-hidden="true" />
                                                     </div>
                                                     <div className="ml-4 text-base font-medium text-gray-900">{t('navBar.dashboard')}</div>
                                                 </Link>
+                                                : ''
                                             } 
                                         </div>
                                     </nav>
@@ -227,7 +228,7 @@ function Navbar({page}: {page: string}) {
                             </div>
                             <div>
                                 <div className="mt-6">
-                                    <LogginButton></LogginButton>
+                                    <LogginButton handleLoading={setLoading} handleLogged={setIsLogged}></LogginButton>
                                 </div>
                             </div>
                         </div>

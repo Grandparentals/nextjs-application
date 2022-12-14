@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Layout from '../components/layout'
-import Cta from '../components/shared/Cta'
 import Features from '../components/shared/Features'
 import FeaturesGradient from '../components/shared/FeaturesGradient'
 import Hero from '../components/shared/Hero'
