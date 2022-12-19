@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
-import FeaturesGradient from '../components/shared/FeaturesGradient'
 
 const AboutUs: NextPage = () => {
     const { t } = useTranslation();
