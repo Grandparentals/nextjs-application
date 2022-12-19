@@ -9,7 +9,6 @@ const acceptableLanguages = ["en", "pl-PL"]
 i18n
     .use(initReactI18next)
     .init(() => {
-        const language = acceptableLanguages.indexOf(window.navigator.language) > -1 ? window.navigator.language : 'en';
 
         const result =
         {
@@ -17,13 +16,18 @@ i18n
                 en: en,
                 "pl-PL": plPL
             },
-            lng: language,
+            lng: 'en',
             interpolation: {
                 escapeValue: false
             }
         }
 
-        return result
+        if (typeof window !== 'undefined') {
+            const language = acceptableLanguages.indexOf(window.navigator.language) > -1 ? window.navigator.language : 'en';
+            result.lng = language
+        }
+
+        return result;
     });
 
 
