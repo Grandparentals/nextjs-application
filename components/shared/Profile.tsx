@@ -1,97 +1,13 @@
 import { CheckIcon, PaperClipIcon, QuestionMarkCircleIcon, ThumbUpIcon, UserIcon } from "@heroicons/react/outline";
 import Image from 'next/image'
+import { useTranslation } from "react-i18next";
 
-// const user = {
-//     name: 'Whitney Francis',
-//     email: 'whitney@example.com',
-//     imageUrl:
-//         'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
-// }
-
-// const attachments = [
-//     { name: 'cirurgias_em_coração_harvard.pdf', href: '#' },
-//     { name: 'coverletter_medical_clinic_oxford.pdf', href: '#' },
-// ]
-
-// const comments = [
-//     {
-//         id: 1,
-//         name: 'Leslie Alexander',
-//         date: '4d ago',
-//         imageId: '1494790108377-be9c29b29330',
-//         body: 'Ducimus quas delectus ad maxime totam doloribus reiciendis ex. Tempore dolorem maiores. Similique voluptatibus tempore non ut.',
-//     },
-//     {
-//         id: 2,
-//         name: 'Michael Foster',
-//         date: '4d ago',
-//         imageId: '1519244703995-f4e0f30006d5',
-//         body: 'Et ut autem. Voluptatem eum dolores sint necessitatibus quos. Quis eum qui dolorem accusantium voluptas voluptatem ipsum. Quo facere iusto quia accusamus veniam id explicabo et aut.',
-//     },
-//     {
-//         id: 3,
-//         name: 'Dries Vincent',
-//         date: '4d ago',
-//         imageId: '1506794778202-cad84cf45f1d',
-//         body: 'Expedita consequatur sit ea voluptas quo ipsam recusandae. Ab sint et voluptatem repudiandae voluptatem et eveniet. Nihil quas consequatur autem. Perferendis rerum et.',
-//     },
-// ]
 
 const eventTypes = {
     applied: { icon: UserIcon, bgColorClass: 'bg-gray-400' },
     advanced: { icon: ThumbUpIcon, bgColorClass: 'bg-pelorous-500' },
     completed: { icon: CheckIcon, bgColorClass: 'bg-green-500' },
 }
-
-// const timeline = [
-//     {
-//         id: 1,
-//         type: eventTypes.applied,
-//         content: 'Aplicou para',
-//         target: 'Teste clínicos',
-//         date: 'Sep 20',
-//         datetime: '2020-09-20',
-//     },
-//     {
-//         id: 2,
-//         type: eventTypes.advanced,
-//         content: 'Consulta realizada',
-//         target: 'Bethany Blake',
-//         date: 'Sep 22',
-//         datetime: '2020-09-22',
-//     },
-//     {
-//         id: 3,
-//         type: eventTypes.completed,
-//         content: 'Completou 600 consultas com',
-//         target: 'Martha Gardner',
-//         date: 'Sep 28',
-//         datetime: '2020-09-28',
-//     },
-//     {
-//         id: 4,
-//         type: eventTypes.advanced,
-//         content: 'Inicio novo tratamento de',
-//         target: 'Bethany Blake',
-//         date: 'Sep 30',
-//         datetime: '2020-09-30',
-//     },
-//     {
-//         id: 5,
-//         type: eventTypes.completed,
-//         content: 'Completou cirurgia no ombro de',
-//         target: 'Katherine Snyder',
-//         date: 'Oct 4',
-//         datetime: '2020-10-04',
-//     },
-// ]
-
-// function classNames(...classes: string[]) {
-//     return classes.filter(Boolean).join(' ')
-// }
-
-
-
 
 function Profile({ data }: any) {
     const { t } = useTranslation();
