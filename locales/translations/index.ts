@@ -1,9 +1,7 @@
 import en from './en'
 import plPL from './pl-PL'
 
-const translations = {
+export {
     en,
     plPL
 }
-
-module.exports = translations

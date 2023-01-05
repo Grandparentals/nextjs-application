@@ -12,6 +12,7 @@ import {  faDashboard, faHeadSideHeart, faHouseLaptop, faInfo, faPeople, faPotFo
 import { faBook, faComment, faDog } from '@fortawesome/free-solid-svg-icons';
 import LogginButton from './LoginButton';
 import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher'
 
 
 
@@ -93,6 +94,8 @@ function Navbar({page}: {page: string}) {
                                     </a>
                                 </Link>
 
+                                
+
                                 <Popover>
                                     {({ open }) => (
                                         <>
@@ -155,7 +158,9 @@ function Navbar({page}: {page: string}) {
                                     )}
                                 </Popover>
                             </Popover.Group>
+                            
                             <div className="flex items-center md:ml-12">
+                                <LanguageSwitcher />
                                 <LogginButton handleLoading={setLoading} handleLogged={setIsLogged}></LogginButton>
                             </div>
                         </div>
