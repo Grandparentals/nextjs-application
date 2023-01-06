@@ -70,9 +70,9 @@ export default {
         },
         components: {
             hero: {
-                title: "Discover people potential",
-                slogan: "Once again",
-                description: "Help the people by letting them help you"
+                title: "Odkryj potencjał ludzi",
+                slogan: "Raz jeszcze",
+                description: "Oni pomogą Tobie, Ty pomożesz Im"
             },
             features: {
                 icons: {
