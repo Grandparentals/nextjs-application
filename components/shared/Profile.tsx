@@ -1,7 +1,13 @@
 import { CheckIcon, PaperClipIcon, QuestionMarkCircleIcon, ThumbUpIcon, UserIcon } from "@heroicons/react/outline";
 import Image from 'next/image'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
+
+const eventTypes = {
+    applied: { icon: UserIcon, bgColorClass: 'bg-gray-400' },
+    advanced: { icon: ThumbUpIcon, bgColorClass: 'bg-pelorous-500' },
+    completed: { icon: CheckIcon, bgColorClass: 'bg-green-500' },
+}
 
 function Profile({ data }: any) {
     const { t } = useTranslation();

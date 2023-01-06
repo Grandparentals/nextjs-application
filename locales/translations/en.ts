@@ -69,6 +69,11 @@ export default {
             },
         },
         components: {
+            hero: {
+                title:"Discover people potential",
+                slogan: "Once again",
+                description: "Help the people by letting them help you"
+            },
             features: {
                 icons: {
                     one: {

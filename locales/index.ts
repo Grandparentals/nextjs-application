@@ -1,17 +1,19 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import enEN from './en-EN';
+import { en, plPL } from './translations'
 
 i18n
     .use(initReactI18next)
     .init({
         resources: {
-            en: enEN
+            en: en,
+            "pl-PL": plPL
         },
         lng: 'en',
         interpolation: {
             escapeValue: false
         }
     });
+
 
 export default i18n;
