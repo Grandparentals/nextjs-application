@@ -3,15 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dashify from "dashify";
 import router from "next/router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Hero() {
+    const { t } = useTranslation();
 
-   const skills = [
+    const skills = [
         { title: "Lets talk", value: "lets-talk" },
         { title: "Lets eat together", value: "lets-eat-together" },
         { title: "Help with studies and homework", value: "help-with-studies-and-homework" },
         { title: "Animals care", value: "animals-care" },
-   ]
+    ]
 
     const [content, setContent] = useState({
         skill: undefined,
@@ -43,11 +45,13 @@ function Hero() {
                     </div>
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                         <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                            <span className="block text-white">Discover people potential</span>
-                            <span className="block text-pelorous-200">Once again</span>
+                            <span className="block text-white">
+                                {t('components.hero.title')}
+                            </span>
+                            <span className="block text-pelorous-200">{t('components.hero.slogan')}</span>
                         </h1>
                         <p className="mx-auto my-6 max-w-lg text-center text-xl text-pelorous-200 sm:max-w-3xl">
-                            Help the people by letting them help you
+                            {t('components.hero.description')}
                         </p>
                         <div className="mx-auto flex max-w-lg align-middle items-center space-x-3">
                             <input
