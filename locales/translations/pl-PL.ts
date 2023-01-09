@@ -72,7 +72,13 @@ export default {
             hero: {
                 title: "Odkryj potencjał ludzi",
                 slogan: "Raz jeszcze",
-                description: "Oni pomogą Tobie, Ty pomożesz Im"
+                description: "Oni pomogą Tobie, Ty pomożesz Im",
+                items: {
+                    letsTalk: "Porozmawiajmy",
+                    letsEatTogether: "Zjedzmy razem",
+                    helpWithStudiesAndHomework: "Pomoc w nauce i pracach domowych",
+                    animalsCare: "Opieka nad zwierzętami",
+                }
             },
             features: {
                 icons: {
