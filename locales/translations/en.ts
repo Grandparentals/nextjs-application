@@ -72,7 +72,13 @@ export default {
             hero: {
                 title:"Discover people potential",
                 slogan: "Once again",
-                description: "Help the people by letting them help you"
+                description: "Help the people by letting them help you",
+                items: {
+                    letsTalk: "Lets talk",
+                    letsEatTogether: "Lets eat together",
+                    helpWithStudiesAndHomework: "Help with studies and homework",
+                    animalsCare: "Animals care",
+                }
             },
             features: {
                 icons: {

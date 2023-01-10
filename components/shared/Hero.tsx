@@ -9,10 +9,10 @@ function Hero() {
     const { t } = useTranslation();
 
     const skills = [
-        { title: "Lets talk", value: "lets-talk" },
-        { title: "Lets eat together", value: "lets-eat-together" },
-        { title: "Help with studies and homework", value: "help-with-studies-and-homework" },
-        { title: "Animals care", value: "animals-care" },
+        { title: t('components.hero.items.letsTalk'), value: "lets-talk" },
+        { title: t('components.hero.items.letsEatTogether'), value: "lets-eat-together" },
+        { title: t('components.hero.items.helpWithStudiesAndHomework'), value: "help-with-studies-and-homework" },
+        { title: t('components.hero.items.animalsCare'), value: "animals-care" },
     ]
 
     const [content, setContent] = useState({
