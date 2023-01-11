@@ -34,15 +34,4 @@ const LoggedIn = () => {
   )
 }
 
-{/* <>
-  <div>
-    {<div>Congratulations {user?.displayName}! You are logged in.</div>}
-    <Link href={"/user/offer/list"}>
-      <a>
-        Vagas
-      </a>
-    </Link>
-  </div>
-</> */}
-
 export default LoggedIn;

@@ -27,7 +27,7 @@ const howItWorks: NextPage = () => {
             <h1 className='font-light text-2xl'>
                   {t('page.howItWorks.title')}
             </h1>
-              <p>{t('page.howItWorks.content')}</p>
+            <p>{t('page.howItWorks.content')}</p>
         </div>
     </Layout> 
   )
